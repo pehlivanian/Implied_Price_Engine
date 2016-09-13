@@ -1,0 +1,6 @@
+<map id="UserQuoteSubscriber" name="UserQuoteSubscriber">
+<area shape="rect" id="node2" href="$class_quote_subscriber.html" title="QuoteSubscriber" alt="" coords="9,80,127,107"/>
+<area shape="rect" id="node3" href="$class_subscriber.html" title="Subscriber\&lt; int \&gt;" alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node4" href="$class_book_publisher.html" title="BookPublisher" alt="" coords="155,80,261,107"/>
+<area shape="rect" id="node5" href="$class_publisher.html" title="Publisher\&lt; int \&gt;" alt="" coords="152,5,267,32"/>
+</map>
