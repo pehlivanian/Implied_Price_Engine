@@ -12,7 +12,7 @@ The code is optimized and times in microsends for the exchange quote update --> 
 
 ```
  legs     average         min     max       stdev              #trials-2
- -----     ----------          ---       ---         -----                -------
+ ----     ----------        ---       ---         -----                -------
  0        0.000000        0        0         0.000000        999998
  1        0.000000        0        0         0.000000        999998
  2        1.450224        0        16335     2.157503        999998
