@@ -11,8 +11,8 @@ outrights, calendar spreads, calendar strips, etc in contracts
 The code is optimized and times in microsends for the exchange quote update --> generated implied quote cycle for the n-leg problems are shown in the table below. The 12-leg (full calendar year in most crude, produces) takes on average less than 10 micros for the update cycle.
 
 ```
- legs     average         min     max       stdev              #trials-2
- ----     ----------        ---       ---         -----                -------
+ legs     average         min      max       stdev           #trials-2
+ ----     ----------      ---       ---         -----                -------
  0        0.000000        0        0         0.000000        999998
  1        0.000000        0        0         0.000000        999998
  2        1.450224        0        16335     2.157503        999998
