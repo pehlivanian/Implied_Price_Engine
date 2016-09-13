@@ -1,4 +1,4 @@
-`# Implied_Price_Engine
+# Implied_Price_Engine
 
 Efficient computation of implied prices in energy complex. This is an
 optimized Implied Price Engine for the CME/ICE Energy complex, our
