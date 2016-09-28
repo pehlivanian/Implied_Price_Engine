@@ -3,8 +3,8 @@
 
 // XXX
 // Temporary; used for display purposes only in .dot output
-const int large_int = 1000;
-const int small_int = 500;
+const int large_int =   200000;
+const int small_int =  100000;
 
 template<typename T>
 struct impl
@@ -41,20 +41,20 @@ struct impl<ImpliedEngine<N>>
 	   uSize_(2),
 	   iPrice_(2),
 	   iSize_(2),
-	   G_(graphVec(n_)),
-	   quote_publishers_(std::vector<std::vector<QuotePublisher>>(2)),
+	   G_(n_),
+	   quote_publishers_(2),
 	   Decomposer_(std::make_unique<Decomposer>())
 
   {
     for(size_t i=0; i<2; ++i)
-      uPrice_[i] = std::vector<int>(n_);
+      uPrice_[i] = std::vector<int>(n_, (i == 0) ? std::numeric_limits<int>::min() : std::numeric_limits<int>::max());
     for(size_t i=0; i<2; ++i)
-      uSize_[i] = std::vector<size_t>(n_);
+      uSize_[i] = std::vector<size_t>(n_,0);
     
     for(size_t i=0; i<2; ++i)
-      iPrice_[i] = std::vector<int>(n_);
+      iPrice_[i] = std::vector<int>(n_, (i == 0) ? std::numeric_limits<int>::min() : std::numeric_limits<int>::max());
     for(size_t i=0; i<2; ++i)
-      iSize_[i] = std::vector<size_t>(n_); 
+      iSize_[i] = std::vector<size_t>(n_,0); 
 
     for(size_t i=0; i<2; ++i)
       quote_publishers_[i] = std::vector<QuotePublisher>(m_ + n_);
@@ -192,6 +192,10 @@ ImpliedEngine<N>::init_markets_()
 
 }
 
+using UQSub = std::shared_ptr<UserQuoteSubscriber>;
+using IQSub = std::shared_ptr<ImpliedQuoteSubscriber>;
+using UBSub = std::shared_ptr<UserBookSubscriber>;
+using IBSub = std::shared_ptr<ImpliedBookSubscriber>;
 
 template<int N>
 void
@@ -203,25 +207,23 @@ ImpliedEngine<N>::init_subscribers_()
   // Note: these should be first in line when a user quote update 
   // message arrives; first update user quotes, then compute implieds,
   // then merge the two in the book object.
-
   for(size_t i=0; i<nl; ++i)
     {
       SecPair mkt = SecPair(i, -1, 1);
 
-      std::shared_ptr<UserQuoteSubscriber> UQSbid = 
-	std::make_shared<UserQuoteSubscriber>();
-      std::shared_ptr<UserBookSubscriber> UBSbid = std::make_shared<UserBookSubscriber>(&(p_->uPrice_[0][i]));
-      UQSbid->attach(UBSbid);
-      (p_->quote_publishers_)[0][(p_->Decomposer_)->node_from_market_decomp(mkt)].attach(UQSbid);
+      UQSub UQSbid = std::make_shared<UserQuoteSubscriber>();
+      UBSub UBSbid = std::make_shared<UserBookSubscriber>(&(p_->uPrice_[0][i]));
+      UQSbid->attach_bid(UBSbid);
+      (p_->quote_publishers_)[0][(p_->Decomposer_)->node_from_market_decomp(mkt)].attach_bid(UQSbid);
 
-      std::shared_ptr<UserQuoteSubscriber> UQSask =
-	std::make_shared<UserQuoteSubscriber>();
-      std::shared_ptr<UserBookSubscriber> UBSask = std::make_shared<UserBookSubscriber>(&(p_->uPrice_[1][i]));
-      UQSask->attach(UBSask);
-      (p_->quote_publishers_)[1][(p_->Decomposer_)->node_from_market_decomp(mkt)].attach(UQSbid);
+      UQSub UQSask = std::make_shared<UserQuoteSubscriber>();
+      UBSub UBSask = std::make_shared<UserBookSubscriber>(&(p_->uPrice_[1][i]));
+      UQSask->attach_ask(UBSask);
+      (p_->quote_publishers_)[1][(p_->Decomposer_)->node_from_market_decomp(mkt)].attach_ask(UQSask);
     }
 
   // Graph edges associated with implied quote derivations
+  // std::unordered_map<SecPair, int> QShash_map;
 
   for(size_t i=0; i<nl; ++i)
     {
@@ -232,27 +234,25 @@ ImpliedEngine<N>::init_subscribers_()
 
 	  while(eb != ee)
 	    {
-	      int v1 = j;
-	      int v2 = eb->first;
+	      int v1 = j, v2 = eb->first;
 	      SecPair mkt = eb->second;
 	      int ind = (p_->Decomposer_)->node_from_market_decomp(mkt.abs());
+
+	      IQSub IQSubscriber = std::make_shared<ImpliedQuoteSubscriber>(v1, v2, (p_->G_)[i], i);
+	      IBSub IBbidSubscriber  = std::make_shared<ImpliedBookSubscriber>(&(p_->iPrice_[0][i]));
+	      IBSub IBaskSubscriber = std::make_shared<ImpliedBookSubscriber>(&(p_->iPrice_[1][i]));
+	      IQSubscriber->attach_bid(IBbidSubscriber);
+	      IQSubscriber->attach_ask(IBaskSubscriber);
+	      
 	      if (mkt.isPos())
-		{
-		  std::shared_ptr<ImpliedQuoteSubscriber> IQS = 
-		    std::make_shared<ImpliedQuoteSubscriber>(v1, v2, (p_->G_)[i]);
-		  (p_->quote_publishers_)[0][ind].attach(IQS);
-		}
+		(p_->quote_publishers_)[1][ind].attach_ask(IQSubscriber);		  
 	      else
-		{
-		  std::shared_ptr<ImpliedQuoteSubscriber> IQS = 
-		    std::make_shared<ImpliedQuoteSubscriber>(v1, v2, (p_->G_)[i]);
-		  (p_->quote_publishers_)[1][ind].attach(IQS);
-		}
+		(p_->quote_publishers_)[0][ind].attach_bid(IQSubscriber);
+	      
 	      ++eb;
 	    }
 	}
     }
-
 }
 
 template<int N>
@@ -298,14 +298,14 @@ template<int N>
 inline void 
 ImpliedEngine<N>::publish_bid_(const SecPair& mkt, const QuotePublishEvent& pe)
 {
-  publish_(0, mkt, pe);
+  (p_->quote_publishers_)[0][(p_->Decomposer_)->node_from_market_decomp(mkt)].nudge_bid(pe);
 }
 
 template<int N>
 inline void 
 ImpliedEngine<N>::publish_ask_(const SecPair& mkt, const QuotePublishEvent& pe)
 {
-  publish_(1, mkt, pe);
+  (p_->quote_publishers_)[1][(p_->Decomposer_)->node_from_market_decomp(mkt)].nudge_ask(pe);
 }
 
 template<int N>
@@ -322,33 +322,51 @@ ImpliedEngine<N>::init_()
   graph_utils::toDot((p_->G_)[0], std::string("./test_before.dot"));
 
   // Test publishing mechanism
-  publish_bid_(SecPair(2,-1,1), QuotePublishEvent(55));
+  publish_bid_(SecPair(0, -1, 1), QuotePublishEvent(4504));
+  publish_bid_(SecPair(1, -1, 1), QuotePublishEvent(4604));
+  publish_bid_(SecPair(2, -1, 1), QuotePublishEvent(4704));
+  publish_bid_(SecPair(3, -1, 1), QuotePublishEvent(4804));
+  publish_bid_(SecPair(4, -1, 1), QuotePublishEvent(4904));
+  publish_bid_(SecPair(5, -1, 1), QuotePublishEvent(5004));
 
-  // Test to see whether it was propagated
-  std::for_each((p_->uPrice_[0]).begin(), (p_->uPrice_[0]).end(),
-		[](int a){std::cout << a << " : "; });
-  std::cout << "\n";
+  publish_ask_(SecPair(0, -1, 1), QuotePublishEvent(4514));
+  publish_ask_(SecPair(1, -1, 1), QuotePublishEvent(4614));
+  publish_ask_(SecPair(2, -1, 1), QuotePublishEvent(4714));
+  publish_ask_(SecPair(3, -1, 1), QuotePublishEvent(4814));
+  publish_ask_(SecPair(4, -1, 1), QuotePublishEvent(4914));
+  publish_ask_(SecPair(5, -1, 1), QuotePublishEvent(5014));
+
+#if 1
+  publish_ask_(SecPair(1, -1, 1), QuotePublishEvent(4610));
+  publish_ask_(SecPair(0, 3,  1), QuotePublishEvent(-300));
+  publish_bid_(SecPair(1, 3, 1), QuotePublishEvent(-200));
+
+  publish_bid_(SecPair(0,2,1), QuotePublishEvent(-200));
+  publish_bid_(SecPair(2,3,1), QuotePublishEvent(-100));
+  publish_bid_(SecPair(3,-1,1), QuotePublishEvent(4805));
+  
+#endif
+
+#if 1
+  std::cout << "USER PRICES:\n";
   std::for_each((p_->uPrice_[1]).begin(), (p_->uPrice_[1]).end(),
 		[](int a){std::cout << a << " : "; });
   std::cout << "\n";
+  std::for_each((p_->uPrice_[0]).begin(), (p_->uPrice_[0]).end(),
+		[](int a){std::cout << a << " : "; });
+  std::cout << "\n\n";
 
-  // Write out again
-  graph_utils::toDot((p_->G_)[0], std::string("./test_after.dot"), (p_->G_)[0]->get_distance(), 
-		     (p_->G_)[0]->get_predecessor());
-
-
-#if 0
-  // Write out again
-  std::vector<int> d = (p_->G_)[0]->get_distance();
-  std::vector<int> p = (p_->G_)[0]->get_predecessor();
-  std::cout << "DISTANCE:\n";
-  std::copy(d.begin(), d.end(), std::ostream_iterator<int>(std::cout, " : " ));
+  std::cout << "IMPLIED PRICES:\n";
+  std::for_each((p_->iPrice_[1]).begin(), (p_->iPrice_[1]).end(),
+		[](int a){std::cout << a << " : "; });
   std::cout << "\n";
-  std::cout << "PREDECESSOR:\n";
-  std::copy(p.begin(), p.end(), std::ostream_iterator<int>(std::cout, " : " ));
-  std::cout << "\n";
+  std::for_each((p_->iPrice_[0]).begin(), (p_->iPrice_[0]).end(),
+		[](int a){std::cout << a << " : "; });
+  std::cout<< "\n";
 #endif
-
+  // Write out again
+  graph_utils::toDot((p_->G_)[0], std::string("./test_after.dot"), (p_->G_)[0]->get_distance(0), 
+		     (p_->G_)[0]->get_predecessor(0));
 }
 
 #endif

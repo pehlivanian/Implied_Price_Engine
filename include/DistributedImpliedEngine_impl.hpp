@@ -57,7 +57,7 @@ struct impl<DistributedImpliedEngine<N>>
       iSize_[i] = std::vector<size_t>(n_); 
 
     for(size_t i=0; i<2; ++i)
-      quote_publishers_[i] = std::vector<QuotePublisher>(m_ + n_);
+      quote_publishers_[i] = std::vector<QuotePublisher>(n_ + m_);
   }
 
   ~impl()
@@ -121,13 +121,13 @@ ImpliedEngine<N>::init_subscribers_()
   // message arrives; first update user quotes, then compute implieds,
   // then merge the two in the book object.
 
-  for(size_t i=0; i<nl; ++i)
-    {
-      
-      using UQSub = std::shared_ptr<UserDistQuoteSubscriber>;
-      using UBSub = std::shared_ptr<UserDistBookSubscriber>;
-      
+  using UQSub = std::shared_ptr<UserDistQuoteSubscriber>;
+  using UBSub = std::shared_ptr<UserDistBookSubscriber>;
+  using IQSub = std::shared_ptr<ImpliedDistQuoteSubscriber>;
+  using IBSub = std::shared_ptr<ImpliedDistBookSubscribers>;
 
+  for(size_t i=0; i<nl; ++i)
+    {      
       SecPair mkt = SecPair(i, -1, 1);
       
       UQSub UQSbid = std::make_shared<UserDistQuoteSubscriber>();

@@ -22,14 +22,20 @@ public:
   
   MarketGraph() : Graph(), 
 		  vertex_props_(VertexPropList(1)),
-		  edge_props_(std::vector<EdgePropList>(1)) {}
+		  edge_props_(std::vector<EdgePropList>(1)),
+		  dist_(2),
+		  pred_(2) {}
   MarketGraph(int n, bool d) : Graph(n, d),
 			       vertex_props_(VertexPropList(n)),
-			       edge_props_(std::vector<EdgePropList>(n)) {}
+			       edge_props_(std::vector<EdgePropList>(n)),
+			       dist_(2),
+			       pred_(2) {}
   MarketGraph(int n) : Graph(n),
 		       vertex_props_(VertexPropList(n)),
-		       edge_props_(std::vector<EdgePropList>(n)) {}
-
+		       edge_props_(std::vector<EdgePropList>(n)),
+		       dist_(2),
+		       pred_(2) {}
+  
   MarketGraph(const MarketGraph&) = default;
   MarketGraph& operator=(const MarketGraph&) = default;
   MarketGraph(MarketGraph&&) noexcept;
@@ -40,10 +46,10 @@ public:
   void addEdgeProp(int, int, const SecPair&);
   void addVertexProp(int, const SecPair&);
 
-  void update_distance(const std::vector<int>& d) { dist_ = d; }
-  void update_predecessor(const std::vector<int>& p) { pred_ = p; }
-  std::vector<int> get_distance() const { return dist_; }
-  std::vector<int> get_predecessor() const { return pred_; }
+  void update_distance(const std::vector<int>& d, int b) { dist_[b] = d; }
+  void update_predecessor(const std::vector<int>& p, int b) { pred_[b] = p; }
+  std::vector<int> get_distance(int b) const { return dist_[b]; }
+  std::vector<int> get_predecessor(int b) const { return pred_[b]; }
 
   VertexPropIterator vertex_prop_begin() { return vertex_props_.begin(); }
   VertexPropIterator vertex_prop_end() { return vertex_props_.end(); }
@@ -54,8 +60,8 @@ private:
   
   VertexPropList              vertex_props_;
   std::vector<EdgePropList>   edge_props_;
-  std::vector<int> dist_;   // for shortest distance calculations
-  std::vector<int> pred_;  // for shortest distance calculations
+  std::vector<std::vector<int>> dist_;   // for bid, ask shortest distance calculations
+  std::vector<std::vector<int>> pred_;  // for bid, ask shortest distance calculations
 };
 
 #endif

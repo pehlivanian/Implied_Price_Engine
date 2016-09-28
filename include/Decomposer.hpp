@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include <algorithm>
 #include <functional>
+#include <ostream>
 
 #include "SecPair.hpp"
 
@@ -57,6 +58,7 @@ public:
   void insert(SecPair, int);
   SecPair market_decomp_from_node(int) const;
   int node_from_market_decomp(const SecPair&) const;
+  friend std::ostream& operator<<(std::ostream&, const Decomposer&);
 private:
   std::unordered_map<int, SecPair> node_to_market_decomp_;
   std::unordered_map<SecPair, int> market_decomp_to_node_;

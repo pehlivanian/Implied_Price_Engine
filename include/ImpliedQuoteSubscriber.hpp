@@ -2,6 +2,8 @@
 #define __IMPLIEDQUOTESUBSCRIBER_HPP__
 
 #include <vector>
+#include <string>
+#include <exception>
 
 #include "QuoteSubscriber.hpp"
 #include "BookSubscriber.hpp"
@@ -12,33 +14,32 @@
 using QuotePublishEvent = QuoteSubscriber::QuotePublishEvent;
 using BookPublishEvent = BookSubscriber::BookPublishEvent;
 
-class ImpliedQuoteSubscriber : public  QuoteSubscriber, public BookPublisher
+class ImpliedQuoteSubscriber : public QuoteSubscriber, public BookPublisher
 {
 public:
-  ImpliedQuoteSubscriber() : v1_(-1), v2_(-1), G_(new MarketGraph()) { }
-   ImpliedQuoteSubscriber(int v1, int v2, MarketGraph *G) : 
+  ImpliedQuoteSubscriber() : v1_(-1), v2_(-1), G_(new MarketGraph()) {}
+  ImpliedQuoteSubscriber(int v1, int v2, MarketGraph* G, int leg) :
     v1_(v1),
     v2_(v2),
     G_(G),
-    bf_(new cat1_visitor())
+    ask_visitor_(new cat1_visitor(0)),
+    bid_visitor_(new cat1_visitor(1)),
+    leg_(leg)
   {}
-						    
-  void update(const QuotePublishEvent& e) override
-  {
-    G_->updateEdgeWeight(v1_, v2_, e.payload_);
-    G_->accept(bf_);
-    G_->update_predecessor(bf_->get_predecessor());
-    G_->update_distance(bf_->get_distance());
-    // The leg always resides at node 1, so notify on it
-    auto d = G_->get_distance();
-    notify(BookPublishEvent(d[1]));
-  }
+  ~ImpliedQuoteSubscriber() = default;
+
+  void update(const QuotePublishEvent& e ) override;
+  void update_bid(const QuotePublishEvent& e) override;
+  void update_ask(const QuotePublishEvent& e) override;
 
 private:
   int v1_;
   int v2_;
   MarketGraph *G_;
+  cat1_visitor* ask_visitor_;
+  cat1_visitor* bid_visitor_;
   cat1_visitor *bf_;
+  int leg_;  
 };
 
 #endif

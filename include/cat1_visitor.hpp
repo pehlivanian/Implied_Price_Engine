@@ -4,6 +4,7 @@
 #include <vector>
 #include <algorithm>
 #include <limits>
+#include <exception>
 
 #include "Visitor.hpp"
 #include "DataElement.hpp"

@@ -12,14 +12,27 @@ class UserBookSubscriber : public BookSubscriber
 {
 public:
   UserBookSubscriber(int* k) : knot_(k) {}
-  
+
   void update(const BookPublishEvent& e) override
   {
-    std::cerr << "UserBookSubscriber(): " << e.payload_ << "\n";
-    *knot_= e.payload_;
+    ; // nop
   }
 
+  void update_bid(const BookPublishEvent& e) override
+  {
+    int p = e.payload_;
+    if (p > *knot_)
+      *knot_ = p;
+  }
+
+  void update_ask(const BookPublishEvent& e) override
+  {
+    int p = e.payload_;
+    if (p < *knot_)
+      *knot_ = p;
+  }
   int* knot_;
 };
+
 
 #endif

@@ -16,10 +16,12 @@ public:
 
   BookPublisher() {}
 protected:
-  // These probably should be weak_ptrs but we don't want
+  // These probably should use weak_ptrs but we don't want
   // to incur the cost of calling .lock() to check for valid pointee.
   // Instead we just assume it is not dangling.
   inline void notify(const BookPublishEvent&) override;
+  inline void notify_bid(const BookPublishEvent&) override;
+  inline void notify_ask(const BookPublishEvent&) override;
   
 };
 
@@ -28,6 +30,20 @@ BookPublisher::notify(const BookPublishEvent& e)
 {
   for(auto& s : subscribers_)
     s->update(e);
+}
+
+inline void
+BookPublisher::notify_bid(const BookPublishEvent& e)
+{
+  for(auto& s : bid_subscribers_)
+    s->update_bid(e);
+}
+
+inline void
+BookPublisher::notify_ask(const BookPublishEvent& e)
+{
+  for(auto& s : ask_subscribers_)
+    s->update_ask(e);
 }
 
 #endif

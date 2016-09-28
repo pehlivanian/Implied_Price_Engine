@@ -15,6 +15,17 @@ public:
   {
     notify(BookPublishEvent(e.payload_));
   }
+  void update_bid(const QuotePublishEvent& e) override
+  {
+    notify_bid(BookPublishEvent(e.payload_));
+  }
+  void update_ask(const QuotePublishEvent& e) override
+  {
+    notify_ask(BookPublishEvent(e.payload_));
+  }
+ 
 };
+
+// No specializations needed
 
 #endif

@@ -1,7 +1,0 @@
-<map id="MarketGraph.hpp" name="MarketGraph.hpp">
-<area shape="rect" id="node6" href="$_sec_pair_8hpp.html" title="SecPair.hpp" alt="" coords="191,80,284,107"/>
-<area shape="rect" id="node9" href="$_graph_8hpp.html" title="Graph.hpp" alt="" coords="525,80,607,107"/>
-<area shape="rect" id="node15" href="$_data_element_8hpp.html" title="DataElement.hpp" alt="" coords="845,155,968,181"/>
-<area shape="rect" id="node17" href="$pool__allocator_8hpp.html" title="pool_allocator.hpp" alt="" coords="993,155,1119,181"/>
-<area shape="rect" id="node16" href="$_visitor_8hpp.html" title="Visitor.hpp" alt="" coords="865,229,948,256"/>
-</map>

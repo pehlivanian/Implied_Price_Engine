@@ -4,7 +4,7 @@ INCLUDES = -I. -I../include/
 LIBS = -lrt -lm
 LIB_DIR = ../libs/
 PROGRAM = ImpliedEngine_test
-OBJS = $(LIB_DIR)DataElement.o $(LIB_DIR)Visitor.o $(LIB_DIR)Graph.o $(LIB_DIR)MarketGraph.o $(LIB_DIR)BinaryHeap.o $(LIB_DIR)cat1_visitor.o $(LIB_DIR)cat2_visitor.o $(LIB_DIR)SecPair.o $(LIB_DIR)ImpliedEngine.o $(LIB_DIR)Decomposer.o
+OBJS = $(LIB_DIR)DataElement.o $(LIB_DIR)Visitor.o $(LIB_DIR)Graph.o $(LIB_DIR)MarketGraph.o $(LIB_DIR)BinaryHeap.o $(LIB_DIR)cat1_visitor.o $(LIB_DIR)cat2_visitor.o $(LIB_DIR)SecPair.o $(LIB_DIR)ImpliedEngine.o $(LIB_DIR)Decomposer.o $(LIB_DIR)ImpliedQuoteSubscriber.o
 
 COMPILE = $(CXX) $(CXXFLAGS) $(INCLUDES)
 
