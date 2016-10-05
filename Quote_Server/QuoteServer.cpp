@@ -31,6 +31,7 @@ int main(int argc, char **argv)
   char* filename = "serveme.txt";
   size_t ret_in;
   
+  // Enough size?
   char sendBuff[1025*10];
   time_t ticks;
 

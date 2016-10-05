@@ -3,8 +3,8 @@ CXXFLAGS = -g -ggdb -Wall -pedantic -std=c++14
 INCLUDES = -I. -I../include/
 LIBS = -lrt -lm
 LIB_DIR = ../libs/
-PROGRAM = ImpliedEngine_test
-OBJS = $(LIB_DIR)DataElement.o $(LIB_DIR)Visitor.o $(LIB_DIR)Graph.o $(LIB_DIR)MarketGraph.o $(LIB_DIR)BinaryHeap.o $(LIB_DIR)cat1_visitor.o $(LIB_DIR)cat2_visitor.o $(LIB_DIR)SecPair.o $(LIB_DIR)ImpliedEngine.o $(LIB_DIR)Decomposer.o $(LIB_DIR)ImpliedQuoteSubscriber.o
+PROGRAM = Threadpool_test
+OBJS = $(LIB_DIR)DataElement.o $(LIB_DIR)Visitor.o $(LIB_DIR)Graph.o $(LIB_DIR)MarketGraph.o $(LIB_DIR)BinaryHeap.o $(LIB_DIR)cat1_visitor.o $(LIB_DIR)cat2_visitor.o $(LIB_DIR)SecPair.o $(LIB_DIR)ImpliedEngine.o $(LIB_DIR)Decomposer.o $(LIB_DIR)ImpliedQuoteSubscriber.o $(LIB_DIR)Client.o
 
 COMPILE = $(CXX) $(CXXFLAGS) $(INCLUDES)
 
@@ -15,6 +15,9 @@ SecPair_test :  SecPair_test.cpp SecPair_test.hpp $(OBJS)
 
 ImpliedEngine_test :  ImpliedEngine_test.cpp ImpliedEngine_test.hpp $(OBJS)
 	$(COMPILE) -o $(PROGRAM) ImpliedEngine_test.cpp $(OBJS) $(LIBS)
+
+Threadpool_test : Threadpool_test.cpp Threadpool_test.hpp $(OBJS)
+	$(COMPILE) -o $(PROGRAM) Threadpool_test.cpp $(OBJS) $(LIBS) -lpthread
 
 clean:
 	rm -fr *.o *~ $(PROGRAM)

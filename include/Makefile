@@ -1,6 +1,9 @@
-all: 	timing.o \
+all: 	Trace.o \
+	timing.o \
 	report.o \
 	benchmark.o \
+	threadpool.o \
+	Client.o \
 	Visitor.o \
 	DataElement.o \
 	BinaryHeap.o \

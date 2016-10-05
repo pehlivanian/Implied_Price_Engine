@@ -2,6 +2,7 @@
 #define __IMPLIEDENGINE_HPP__
 
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include <algorithm>
 #include <functional>
@@ -32,6 +33,14 @@ class ImpliedEngine
 {
 public:
   ImpliedEngine() : p_(std::make_unique<impl<ImpliedEngine<N>>>()) { init_(); }
+
+  inline void publish_bid(const SecPair&, const QuotePublishEvent&);
+  inline void publish_ask(const SecPair&, const QuotePublishEvent&);
+
+  void write_user_curve();
+  void write_implied_curve();
+  void write_dot(int, char*);
+  
 private:
   void init_();
   void init_decomposition_();
@@ -39,10 +48,7 @@ private:
   void init_graphs_();
   void init_subscribers_();
   void init_weights_();
-
-  inline void publish_(size_t, const SecPair&, const QuotePublishEvent&);
-  inline void publish_bid_(const SecPair&, const QuotePublishEvent&);
-  inline void publish_ask_(const SecPair&, const QuotePublishEvent&);
+  void write_curve_(std::vector<std::vector<int>>);
 
   std::unique_ptr<impl<ImpliedEngine<N>>> p_;
 

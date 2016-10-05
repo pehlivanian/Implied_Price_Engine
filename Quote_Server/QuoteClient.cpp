@@ -9,6 +9,21 @@
 #include <errno.h>
 #include <arpa/inet.h> 
 
+struct quote_object
+{
+  quote_object(char* I, int BP, size_t BS, int AP, size_t AS) :
+    Inst(I),
+    BidPrice(BP),
+    BidSize(BS),
+    AskPrice(AP),
+    AskSize(AS) {}
+  char*     Inst;
+  int         BidPrice;
+  size_t    BidSize;
+  int         AskPrice;
+  size_t    AskPrice;
+};
+
 int receive(uint32_t* num, int fd)
 {
 
