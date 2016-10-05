@@ -48,18 +48,6 @@ private:
 	  }
 	std::cout << "\n";
       }
-#if 0    
-    // regex pat(R"(\,+(\w+))");
-    std::cout << "INPUT_: " << input_ << "\n";
-    regex pat(R"([^,]+)");
-    for(sregex_iterator p(input_.begin(), input_.end(),pat);
-	p!=sregex_iterator{};
-	++p)
-      {
-	std::cout << "yes\n";
-	// std::cout << (*p)[0] << "\n";
-      }
-#endif
   }
   
 };
