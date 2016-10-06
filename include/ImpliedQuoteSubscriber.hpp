@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <exception>
+#include <mutex>
 
 #include "QuoteSubscriber.hpp"
 #include "BookSubscriber.hpp"
@@ -33,6 +34,7 @@ public:
   void update_ask(const QuotePublishEvent& e) override;
 
 private:
+  mutable std::mutex mut_;
   int v1_;
   int v2_;
   MarketGraph *G_;

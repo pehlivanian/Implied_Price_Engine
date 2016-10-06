@@ -6,7 +6,7 @@
 class DataElement
 {
 public:
-  inline void accept(Visitor* v) { v->visit(this); }
+  inline virtual void accept(Visitor* v) { v->visit(this); }
   virtual ~DataElement() {}
 protected:
   DataElement() {}

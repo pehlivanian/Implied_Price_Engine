@@ -10,6 +10,8 @@
 #include <iterator>
 #include <limits>
 #include <memory>
+#include <mutex>
+#include <condition_variable>
 
 #include "DataElement.hpp"
 #include "pool_allocator.hpp"
@@ -45,7 +47,7 @@ public:
     arena<POOL_SIZE>* ar = new arena<POOL_SIZE>{};
     vertices_ = std::vector<VertexList>(n, VertexList{A<IPair,POOL_SIZE>(*ar)});
   }
-  Graph(const Graph&) = default;
+  Graph(const Graph&);
   Graph& operator=(const Graph&) = default;
   Graph(Graph&&) noexcept;
   Graph& operator=(Graph&&) noexcept;
@@ -68,6 +70,7 @@ public:
   void load(std::string filename);			 
 
 protected:
+  mutable std::mutex mut_;
   int n_;
   bool directed_;
   std::vector<VertexList> vertices_;

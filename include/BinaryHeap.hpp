@@ -38,12 +38,6 @@ private:
   ELEMENT_VEC elements_;
   INT_VEC pos_;
 
-  // Performance metrics triggered in makefile
-  long _numComparisons;
-  long _numInsert;
-  long _numSwaps;
-  long _numSmallest;
-  long _numDecrease;
 };
 
 #endif
