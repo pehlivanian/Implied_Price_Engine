@@ -1,0 +1,2 @@
+add_executable(Threadpool_test Threadpool_test.cpp)
+target_link_libraries(Threadpool_test LINK_PUBLIC IElib pthread)

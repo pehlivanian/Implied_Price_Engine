@@ -28,6 +28,14 @@ using VertexIterator = VertexList::const_iterator;
 enum vertexColor { White, Gray, Black };
 enum edgeType { Tree, Backward, Forward, Cross };
 
+using SERIALIZER_W = std::lock_guard<std::mutex>;
+using SERIALIZER_R = std::lock_guard<std::mutex>;
+// XXX To do
+// Will have to use Boost version of shraed_mutex
+#define SERIALIZE_WRITES SERIALIZER_R lg(mut_);
+#define SERIALIZE_READS SERIALIZER_R ls(mut_);
+
+
 class Graph : public DataElement
 {
 public:
@@ -51,7 +59,9 @@ public:
   Graph& operator=(const Graph&) = default;
   Graph(Graph&&) noexcept;
   Graph& operator=(Graph&&) noexcept;
-  
+
+  inline void accept(Visitor* v) override { SERIALIZE_READS; v->visit(this); };
+
   inline const size_t numVertices() const { return n_; }
   inline bool directed() const { return directed_; }
   inline bool isEdge(int, int) const;
