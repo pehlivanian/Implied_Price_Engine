@@ -13,6 +13,9 @@
 #include <mutex>
 #include <condition_variable>
 
+#include <boost/thread/locks.hpp>
+#include <boost/thread/shared_mutex.hpp>
+
 #include "DataElement.hpp"
 #include "pool_allocator.hpp"
 
@@ -28,10 +31,9 @@ using VertexIterator = VertexList::const_iterator;
 enum vertexColor { White, Gray, Black };
 enum edgeType { Tree, Backward, Forward, Cross };
 
-using SERIALIZER_W = std::lock_guard<std::mutex>;
-using SERIALIZER_R = std::lock_guard<std::mutex>;
-// XXX To do
-// Will have to use Boost version of shraed_mutex
+using SERIALIZER_W = boost::lock_guard<boost::shared_mutex>;
+using SERIALIZER_R = boost::shared_lock<boost::shared_mutex>;
+
 #define SERIALIZE_WRITES SERIALIZER_R lg(mut_);
 #define SERIALIZE_READS SERIALIZER_R ls(mut_);
 
@@ -80,7 +82,7 @@ public:
   void load(std::string filename);			 
 
 protected:
-  mutable std::mutex mut_;
+  mutable boost::shared_mutex mut_;
   int n_;
   bool directed_;
   std::vector<VertexList> vertices_;
