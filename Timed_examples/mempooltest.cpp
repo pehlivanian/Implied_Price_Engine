@@ -8,7 +8,7 @@ int main(int argc, char **argv)
 
   const int R = 2;
   const int C = 1000;
-  const int NUM_ALLOCS = 100;
+  const int NUM_ALLOCS = 10000;
 
   long* MStimes[R];
   long* NStimes[R];

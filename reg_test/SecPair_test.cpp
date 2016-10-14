@@ -117,8 +117,10 @@ int main(int argc, char **argv)
 #if 1
   {
     SecPair p1(1,2,1);
-    SecPair p2(2,-1,1);
+    SecPair p2(2,1,1);
     p1 *= -1;
+
+    assert(p1 == p2);
   }
 #endif
 

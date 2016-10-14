@@ -19,8 +19,12 @@ class SecPair
     SecPair(SecPair&& rhs) = default;
     SecPair& operator=(SecPair&&) = default;
 
-    SecPair abs();
-    bool isPos();
+    SecPair abs() const;
+    bool isPos() const;
+    bool isLeg() const;
+
+    int leg0() const;
+    int leg1() const;
 
     SecPair& operator*=(int m);
     SecPair operator*(int m);

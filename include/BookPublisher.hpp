@@ -8,11 +8,13 @@
 #include "QuoteSubscriber.hpp"
 #include "MarketGraph.hpp"
 
-class BookPublisher : public Publisher<int>
+using Price_Size_Pair = std::pair<int, size_t>;
+
+class BookPublisher : public Publisher<Price_Size_Pair>
 {
 public:
 
-  using BookPublishEvent = QuoteSubscriber::QuotePublishEvent;
+  using BookPublishEvent = QuoteSubscriber<Price_Size_Pair>::QuotePublishEvent;
 
   BookPublisher() {}
 protected:

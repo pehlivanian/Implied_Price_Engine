@@ -123,7 +123,7 @@ class threadpool
      joiner(threads)
        {
 	 unsigned const thread_count = std::thread::hardware_concurrency();
-	 
+
 	 try
 	   {
 	     for(unsigned i=0;i<thread_count;++i)

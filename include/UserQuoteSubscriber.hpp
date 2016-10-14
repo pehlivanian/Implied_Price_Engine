@@ -4,10 +4,11 @@
 #include "QuoteSubscriber.hpp"
 #include "BookPublisher.hpp"
 
-using QuotePublishEvent = QuoteSubscriber::QuotePublishEvent;
-using BookPublishEvent = BookSubscriber::BookPublishEvent;
+using Price_Size_Pair = std::pair<int, size_t>;
+using QuotePublishEvent = QuoteSubscriber<Price_Size_Pair>::QuotePublishEvent;
+using BookPublishEvent = BookSubscriber<Price_Size_Pair>::BookPublishEvent;
 
-class UserQuoteSubscriber : public QuoteSubscriber, public BookPublisher
+class UserQuoteSubscriber : public QuoteSubscriber<Price_Size_Pair>, public BookPublisher
 {
 public:
   UserQuoteSubscriber()  = default;

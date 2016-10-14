@@ -8,6 +8,7 @@
 #include <iterator>
 
 #include "ImpliedEngine.hpp"
+#include "ImpliedServer.hpp"
 #include "Client.hpp"
 
 #endif

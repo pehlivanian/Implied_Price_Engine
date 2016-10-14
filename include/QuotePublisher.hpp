@@ -8,11 +8,13 @@
 #include "QuoteSubscriber.hpp"
 #include "MarketGraph.hpp"
 
-class QuotePublisher : public Publisher<int>
+using Price_Size_Pair = std::pair<int, size_t>;
+
+class QuotePublisher : public Publisher<Price_Size_Pair>
 {
 public:
 
-  using QuotePublishEvent = QuoteSubscriber::QuotePublishEvent;
+  using QuotePublishEvent = QuoteSubscriber<Price_Size_Pair>::QuotePublishEvent;
 
   QuotePublisher() {}
 protected:
@@ -27,22 +29,40 @@ protected:
 inline void 
 QuotePublisher::notify(const QuotePublishEvent& e)
 {
-  for (auto& s: subscribers_)
-    s->update(e);
+  for (auto& s: subscribers_) {
+    try {
+      s->update(e);
+    }
+    catch (...) {
+      throw;
+    }
+  }
 }
 
 inline void
 QuotePublisher::notify_bid(const QuotePublishEvent& e)
 {
-  for(auto& s : bid_subscribers_)
+  for(auto& s : bid_subscribers_) {
+    try {
       s->update_bid(e);
+    }
+    catch (...) {
+      throw;
+    }
+  }
 }
 
 inline void
 QuotePublisher::notify_ask(const QuotePublishEvent& e)
 {
-  for(auto& s : ask_subscribers_)
-    s->update_ask(e);
+  for(auto& s : ask_subscribers_) {
+      try {
+          s->update_ask(e);
+      }
+      catch (...) {
+          throw;
+      }
+  }
 }
 
 #endif

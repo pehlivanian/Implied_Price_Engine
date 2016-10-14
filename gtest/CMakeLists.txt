@@ -5,7 +5,9 @@ set(warnings "-Wall -Wparenthesis -Wno-unused-variable -Wno-sign-compare ")
 
 # Locate GTest
 find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS} "../include")
+# set(Boost_DEBUG on)
+# find_package(Boost)
+# include_directories(${Boost_INCLUDE_DIRS} ${GTEST_INCLUDE_DIRS} "../include")
 
 #Link runTests with what we want to test and GTest and pthread libraries
 add_executable(SecPair_gtest SecPair_gtest.cpp)

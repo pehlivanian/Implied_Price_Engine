@@ -15,6 +15,6 @@
 #include "Graph.hpp"
 #include "Graph_utils.hpp"
 #include "BinaryHeap.hpp"
-#include "dijkstra_visitor.hpp"
+#include "cat2_visitor.hpp"
 
 #endif

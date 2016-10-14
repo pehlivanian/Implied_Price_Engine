@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 	  Graph* g = new MarketGraph(0);
 	  g->load(fn);
 	  
-	  ::dijkstra_visitor* dv = new ::dijkstra_visitor();
+	  ::cat2_visitor* dv = new ::cat2_visitor();
 	  
 	  for(int c=0; c<C; ++c)
 	    {

@@ -24,16 +24,19 @@ public:
 		  vertex_props_(VertexPropList(1)),
 		  edge_props_(std::vector<EdgePropList>(1)),
 		  dist_(2),
+                  size_(2),
 		  pred_(2) {}
   MarketGraph(int n, bool d) : Graph(n, d),
 			       vertex_props_(VertexPropList(n)),
 			       edge_props_(std::vector<EdgePropList>(n)),
 			       dist_(2),
+                               size_(2),
 			       pred_(2) {}
   MarketGraph(int n) : Graph(n),
 		       vertex_props_(VertexPropList(n)),
 		       edge_props_(std::vector<EdgePropList>(n)),
 		       dist_(2),
+                       size_(2),
 		       pred_(2) {}
   
   MarketGraph(const MarketGraph&) = default;
@@ -47,8 +50,10 @@ public:
   void addVertexProp(int, const SecPair&);
 
   void update_distance(const std::vector<int>& d, int b) { dist_[b] = d; }
+	void update_size(const std::vector<size_t>& s, int b) { size_[b] = s; }
   void update_predecessor(const std::vector<int>& p, int b) { pred_[b] = p; }
   std::vector<int> get_distance(int b) const { return dist_[b]; }
+	std::vector<size_t> get_size(int b) const { return size_[b]; }
   std::vector<int> get_predecessor(int b) const { return pred_[b]; }
 
   VertexPropIterator vertex_prop_begin() { return vertex_props_.begin(); }
@@ -60,8 +65,9 @@ private:
   
   VertexPropList              vertex_props_;
   std::vector<EdgePropList>   edge_props_;
-  std::vector<std::vector<int>> dist_;   // for bid, ask shortest distance calculations
-  std::vector<std::vector<int>> pred_;  // for bid, ask shortest distance calculations
+  std::vector<std::vector<int>> dist_;       // for bid, ask shortest distance calculations
+    std::vector<std::vector<size_t>> size_;  // for bid, ask size calculations
+  std::vector<std::vector<int>> pred_;       // for bid, ask shortest distance calculations
 };
 
 #endif

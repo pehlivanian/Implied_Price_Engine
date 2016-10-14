@@ -3,10 +3,11 @@
 
 #include "Subscriber.hpp"
 
-class BookSubscriber : public Subscriber<int>
+template<typename T>
+class BookSubscriber : public Subscriber<T>
 {
 public:
-  using BookPublishEvent = Subscriber::PublishEvent;
+  using BookPublishEvent = typename Subscriber<T>::PublishEvent;
 
   virtual void update(const BookPublishEvent&) = 0;
 };

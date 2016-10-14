@@ -341,6 +341,33 @@ ImpliedQuoteSubscriber.cpp.s:
 	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedQuoteSubscriber.cpp.s
 .PHONY : ImpliedQuoteSubscriber.cpp.s
 
+ImpliedServer.o: ImpliedServer.cpp.o
+
+.PHONY : ImpliedServer.o
+
+# target to build an object file
+ImpliedServer.cpp.o:
+	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedServer.cpp.o
+.PHONY : ImpliedServer.cpp.o
+
+ImpliedServer.i: ImpliedServer.cpp.i
+
+.PHONY : ImpliedServer.i
+
+# target to preprocess a source file
+ImpliedServer.cpp.i:
+	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedServer.cpp.i
+.PHONY : ImpliedServer.cpp.i
+
+ImpliedServer.s: ImpliedServer.cpp.s
+
+.PHONY : ImpliedServer.s
+
+# target to generate assembly for a file
+ImpliedServer.cpp.s:
+	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedServer.cpp.s
+.PHONY : ImpliedServer.cpp.s
+
 MarketGraph.o: MarketGraph.cpp.o
 
 .PHONY : MarketGraph.o
@@ -644,6 +671,9 @@ help:
 	@echo "... ImpliedQuoteSubscriber.o"
 	@echo "... ImpliedQuoteSubscriber.i"
 	@echo "... ImpliedQuoteSubscriber.s"
+	@echo "... ImpliedServer.o"
+	@echo "... ImpliedServer.i"
+	@echo "... ImpliedServer.s"
 	@echo "... MarketGraph.o"
 	@echo "... MarketGraph.i"
 	@echo "... MarketGraph.s"

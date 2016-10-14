@@ -9,7 +9,7 @@ def now() : return time.ctime(time.time())
 BLOCK_SIZE= 1024
 DEFAULT_MODE = 'client'
 DEFAULT_HOST = 'localhost'
-DEFAULT_PORT = 50001
+DEFAULT_PORT = 8008
 
 helptext = """
 Usage...

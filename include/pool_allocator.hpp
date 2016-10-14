@@ -72,8 +72,8 @@ public:
   {
     // XXX
     // alternatively, nop
-    // a_.deallocate(reinterpret_cast<char*>(p), n*sizeof(T));
     ;
+    // a_.deallocate(reinterpret_cast<char*>(p), n*sizeof(T));
   }
   
   template <class T1, std::size_t N1, class U, std::size_t M>

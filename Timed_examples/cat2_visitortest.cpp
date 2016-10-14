@@ -1,4 +1,4 @@
-#include "dijkstratest.h"
+#include "cat2_visitortest.h"
 
 int main(int argc, char **argv)
 {
@@ -16,16 +16,14 @@ int main(int argc, char **argv)
       NStimes[i] = (long*)malloc(C * sizeof(long));
     }
 
-  // Evaluate 2 versions of dijkstra algorithm
-  std::string workdir = "../Graph_algorithms/graphs/rand-";
+  // Evaluate 2 versions of cat2 algorithm
+  std::string workdir = "../graph_exs/";
 
   for(size_t c=0; c<C; ++c)
-    {
-      
+    {      
       // First generate a random graph from Python call
       
-
-      std::string filename = workdir + std::to_string(5) + ".dat";
+      std::string filename = workdir + "random.dat";
       char* fn = new char[filename.length() + 1];
       std::strcpy(fn, filename.c_str());
       
@@ -54,7 +52,7 @@ int main(int argc, char **argv)
       // Home-grown calculation
       Graph* g_mine = new Graph(0);
       g_mine->load(fn);
-      ::dijkstra_visitor* dv = new ::dijkstra_visitor();
+      ::cat2_visitor* dv = new ::cat2_visitor();
 
       gettimeofday(&beforeV, 0);
       port_gettime(&before);
@@ -67,11 +65,11 @@ int main(int argc, char **argv)
       NStimes[1][c] = diffNanoTimer(&before, &after);
     }
   
-  printf ("Table for Dijkstratest\n");
+  printf ("Table for Cat2 Test\n");
   printf ("n\taverage\t\tmin\tmax\tstdev\t\t#\n");
   buildTable(MStimes, R, C);
   
-  printf ("Table for Dijkstratest\n");
+  printf ("Table for Cat2 Test\n");
   printf ("n\taverage\t\tmin\tmax\tstdev\t\t#\n");
   buildTable(NStimes, R, C);
     

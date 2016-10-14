@@ -21,7 +21,7 @@ struct quote_object
   int         BidPrice;
   size_t    BidSize;
   int         AskPrice;
-  size_t    AskPrice;
+  size_t    AskSize;
 };
 
 int receive(uint32_t* num, int fd)

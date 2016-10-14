@@ -20,9 +20,9 @@
 #include "pool_allocator.hpp"
 
 const size_t NUM_INSERTS = 100;
-const size_t POOL_SIZE = sizeof(std::pair<int,int>) * NUM_INSERTS;
+const size_t POOL_SIZE = sizeof(std::pair<int,std::pair<int,size_t>>) * NUM_INSERTS;
 
-using IPair = std::pair<int, int>;
+using IPair = std::pair<int, std::pair<int, size_t>>;
 template<class T, std::size_t N> using A = stack_allocator<T, N>;
 template<class T, std::size_t N> using ForwardList = std::forward_list<T, A<T,N>>;
 using VertexList = ForwardList<IPair, POOL_SIZE>;
@@ -34,7 +34,7 @@ enum edgeType { Tree, Backward, Forward, Cross };
 using SERIALIZER_W = boost::lock_guard<boost::shared_mutex>;
 using SERIALIZER_R = boost::shared_lock<boost::shared_mutex>;
 
-#define SERIALIZE_WRITES SERIALIZER_R lg(mut_);
+#define SERIALIZE_WRITES SERIALIZER_W lg(mut_);
 #define SERIALIZE_READS SERIALIZER_R ls(mut_);
 
 
@@ -67,15 +67,15 @@ public:
   inline const size_t numVertices() const { return n_; }
   inline bool directed() const { return directed_; }
   inline bool isEdge(int, int) const;
-  inline bool isEdge(int, int, int &) const;
+  inline bool isEdge(int, int, std::pair<int, size_t>&) const;
   inline int edgeWeight(int, int) const;
 
-  void addEdge(int, int);
-  void addEdge(int, int, int);
+    void addEdge(int, int,  const std::pair<int,size_t>&);
+    void addEdge(int, int);
+  void addEdge(int, int, int, int);
   bool removeEdge(int, int);
-  bool updateEdgeWeight(int, int, int);
+  bool updateEdgeWeight(int, int, int, int);
 
-  // Utils
   VertexIterator begin(int u) const { return vertices_[u].begin(); }
   VertexIterator end(int u) const { return vertices_[u].end(); }
 

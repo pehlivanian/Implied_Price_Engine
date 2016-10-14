@@ -124,6 +124,188 @@ IElib/fast:
 .PHONY : IElib/fast
 
 #=============================================================================
+# Target rules for targets named Create_QuoteStream
+
+# Build rule for target.
+Create_QuoteStream: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Create_QuoteStream
+.PHONY : Create_QuoteStream
+
+# fast build rule for target.
+Create_QuoteStream/fast:
+	$(MAKE) -f utils/CMakeFiles/Create_QuoteStream.dir/build.make utils/CMakeFiles/Create_QuoteStream.dir/build
+.PHONY : Create_QuoteStream/fast
+
+#=============================================================================
+# Target rules for targets named mempooltest
+
+# Build rule for target.
+mempooltest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mempooltest
+.PHONY : mempooltest
+
+# fast build rule for target.
+mempooltest/fast:
+	$(MAKE) -f Timed_examples/CMakeFiles/mempooltest.dir/build.make Timed_examples/CMakeFiles/mempooltest.dir/build
+.PHONY : mempooltest/fast
+
+#=============================================================================
+# Target rules for targets named grouptest
+
+# Build rule for target.
+grouptest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 grouptest
+.PHONY : grouptest
+
+# fast build rule for target.
+grouptest/fast:
+	$(MAKE) -f Timed_examples/CMakeFiles/grouptest.dir/build.make Timed_examples/CMakeFiles/grouptest.dir/build
+.PHONY : grouptest/fast
+
+#=============================================================================
+# Target rules for targets named gentest
+
+# Build rule for target.
+gentest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gentest
+.PHONY : gentest
+
+# fast build rule for target.
+gentest/fast:
+	$(MAKE) -f Timed_examples/CMakeFiles/gentest.dir/build.make Timed_examples/CMakeFiles/gentest.dir/build
+.PHONY : gentest/fast
+
+#=============================================================================
+# Target rules for targets named typetest
+
+# Build rule for target.
+typetest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 typetest
+.PHONY : typetest
+
+# fast build rule for target.
+typetest/fast:
+	$(MAKE) -f Timed_examples/CMakeFiles/typetest.dir/build.make Timed_examples/CMakeFiles/typetest.dir/build
+.PHONY : typetest/fast
+
+#=============================================================================
+# Target rules for targets named cat2_visitortest
+
+# Build rule for target.
+cat2_visitortest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cat2_visitortest
+.PHONY : cat2_visitortest
+
+# fast build rule for target.
+cat2_visitortest/fast:
+	$(MAKE) -f Timed_examples/CMakeFiles/cat2_visitortest.dir/build.make Timed_examples/CMakeFiles/cat2_visitortest.dir/build
+.PHONY : cat2_visitortest/fast
+
+#=============================================================================
+# Target rules for targets named allocatortest
+
+# Build rule for target.
+allocatortest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 allocatortest
+.PHONY : allocatortest
+
+# fast build rule for target.
+allocatortest/fast:
+	$(MAKE) -f Timed_examples/CMakeFiles/allocatortest.dir/build.make Timed_examples/CMakeFiles/allocatortest.dir/build
+.PHONY : allocatortest/fast
+
+#=============================================================================
+# Target rules for targets named CLlegtest
+
+# Build rule for target.
+CLlegtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CLlegtest
+.PHONY : CLlegtest
+
+# fast build rule for target.
+CLlegtest/fast:
+	$(MAKE) -f Timed_examples/CMakeFiles/CLlegtest.dir/build.make Timed_examples/CMakeFiles/CLlegtest.dir/build
+.PHONY : CLlegtest/fast
+
+#=============================================================================
+# Target rules for targets named QuoteClient
+
+# Build rule for target.
+QuoteClient: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 QuoteClient
+.PHONY : QuoteClient
+
+# fast build rule for target.
+QuoteClient/fast:
+	$(MAKE) -f Quote_Server/CMakeFiles/QuoteClient.dir/build.make Quote_Server/CMakeFiles/QuoteClient.dir/build
+.PHONY : QuoteClient/fast
+
+#=============================================================================
+# Target rules for targets named QuoteServer
+
+# Build rule for target.
+QuoteServer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 QuoteServer
+.PHONY : QuoteServer
+
+# fast build rule for target.
+QuoteServer/fast:
+	$(MAKE) -f Quote_Server/CMakeFiles/QuoteServer.dir/build.make Quote_Server/CMakeFiles/QuoteServer.dir/build
+.PHONY : QuoteServer/fast
+
+#=============================================================================
+# Target rules for targets named Threadpool_test
+
+# Build rule for target.
+Threadpool_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Threadpool_test
+.PHONY : Threadpool_test
+
+# fast build rule for target.
+Threadpool_test/fast:
+	$(MAKE) -f reg_test/CMakeFiles/Threadpool_test.dir/build.make reg_test/CMakeFiles/Threadpool_test.dir/build
+.PHONY : Threadpool_test/fast
+
+#=============================================================================
+# Target rules for targets named SecPair_test
+
+# Build rule for target.
+SecPair_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 SecPair_test
+.PHONY : SecPair_test
+
+# fast build rule for target.
+SecPair_test/fast:
+	$(MAKE) -f reg_test/CMakeFiles/SecPair_test.dir/build.make reg_test/CMakeFiles/SecPair_test.dir/build
+.PHONY : SecPair_test/fast
+
+#=============================================================================
+# Target rules for targets named ImpliedEngine_test
+
+# Build rule for target.
+ImpliedEngine_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ImpliedEngine_test
+.PHONY : ImpliedEngine_test
+
+# fast build rule for target.
+ImpliedEngine_test/fast:
+	$(MAKE) -f reg_test/CMakeFiles/ImpliedEngine_test.dir/build.make reg_test/CMakeFiles/ImpliedEngine_test.dir/build
+.PHONY : ImpliedEngine_test/fast
+
+#=============================================================================
+# Target rules for targets named Clienttest
+
+# Build rule for target.
+Clienttest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Clienttest
+.PHONY : Clienttest
+
+# fast build rule for target.
+Clienttest/fast:
+	$(MAKE) -f reg_test/CMakeFiles/Clienttest.dir/build.make reg_test/CMakeFiles/Clienttest.dir/build
+.PHONY : Clienttest/fast
+
+#=============================================================================
 # Target rules for targets named SecPair_gtest
 
 # Build rule for target.
@@ -145,6 +327,20 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... IElib"
+	@echo "... Create_QuoteStream"
+	@echo "... mempooltest"
+	@echo "... grouptest"
+	@echo "... gentest"
+	@echo "... typetest"
+	@echo "... cat2_visitortest"
+	@echo "... allocatortest"
+	@echo "... CLlegtest"
+	@echo "... QuoteClient"
+	@echo "... QuoteServer"
+	@echo "... Threadpool_test"
+	@echo "... SecPair_test"
+	@echo "... ImpliedEngine_test"
+	@echo "... Clienttest"
 	@echo "... SecPair_gtest"
 .PHONY : help
 

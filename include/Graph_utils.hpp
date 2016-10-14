@@ -69,7 +69,7 @@ public:
     {
       int src, tgt, weight;
       int nr = fscanf(fp, "%d,%d,%d\n", &src, &tgt, &weight);
-      assert(nr == 1);
+      assert(nr > 0);
       edges[edge_count] = std::make_pair(src, tgt);
       weights[edge_count] = weight;
       edge_count++;
@@ -111,7 +111,7 @@ public:
 	Graph::Graph_iterator ge = g->end(i);
 	while( gb != ge)
 	  {
-	    int u = i, v = gb->first, wt = gb->second;
+	    int u = i, v = gb->first, wt = (gb->second).first, sz = (gb->second).second;
 	    dot_file << g->vertexProp(u) << " -> " << g->vertexProp(v)
 		     << "[label=\"" << g->edgeProp(u,v)  << " : " << wt << "\"";
 	    if ((p.size() > 1) && (p[v] == u))
@@ -156,8 +156,8 @@ public:
 	Graph::Graph_iterator ge = g->end(i);
 	while( gb != ge)
 	  {
-	    std::cout << "Edge: " << i << " : " << gb->first 
-		      << " : " << gb->second << "\n";
+	    std::cout << "Edge: " << i << " : " << (gb->second).first
+		      << " : " << (gb->second).second << "\n";
 	    ++gb;
 	  }
       }

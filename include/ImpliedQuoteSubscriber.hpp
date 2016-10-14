@@ -12,10 +12,11 @@
 #include "MarketGraph.hpp"
 #include "cat1_visitor.hpp"
 
-using QuotePublishEvent = QuoteSubscriber::QuotePublishEvent;
-using BookPublishEvent = BookSubscriber::BookPublishEvent;
+using Price_Size_Pair = std::pair<int, size_t>;
+using QuotePublishEvent = QuoteSubscriber<Price_Size_Pair>::QuotePublishEvent;
+using BookPublishEvent = BookSubscriber<Price_Size_Pair>::BookPublishEvent;
 
-class ImpliedQuoteSubscriber : public QuoteSubscriber, public BookPublisher
+class ImpliedQuoteSubscriber : public QuoteSubscriber<Price_Size_Pair>, public BookPublisher
 {
 public:
   ImpliedQuoteSubscriber() : v1_(-1), v2_(-1), G_(new MarketGraph()) {}
@@ -34,13 +35,11 @@ public:
   void update_ask(const QuotePublishEvent& e) override;
 
 private:
-  mutable std::mutex mut_;
   int v1_;
   int v2_;
   MarketGraph *G_;
   cat1_visitor* ask_visitor_;
   cat1_visitor* bid_visitor_;
-  cat1_visitor *bf_;
   int leg_;  
 };
 

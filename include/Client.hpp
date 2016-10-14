@@ -16,13 +16,29 @@
 #include <memory>
 #include <string>
 #include <regex>
+#include <utility>
 #include <iterator>
 
+#include "SecPair.hpp"
+#include "QuoteSubscriber.hpp"
+
+using Price_Size_Pair = std::pair<int, size_t>;
+using QuotePublishEvent = QuoteSubscriber<Price_Size_Pair>::QuotePublishEvent;
+
+struct quote_msg
+{
+    quote_msg(SecPair&& mkt, QuotePublishEvent&& e) : mkt(std::move(mkt)), e(std::move(e)) {}
+    SecPair mkt;
+    QuotePublishEvent e;
+};
+
+#if 0
 struct quote_msg
 {
   quote_msg(std::string input) : input_(input)
   {
-    init_();
+      // XXX
+    // init_();
   }
   quote_msg(char* input) : input_(input)
   {
@@ -33,8 +49,8 @@ struct quote_msg
 private:
   void init_()
   {
-    using namespace std;
-
+#if 0
+    // Comma-delimited
     string tok;
     stringstream ss(input_);
     while(getline(ss, tok))
@@ -48,16 +64,18 @@ private:
 	  }
 	std::cout << "\n";
       }
+#endif
   }
   
 };
+#endif
 
 class ClientComponent
 {
 public:
   ClientComponent(int port, char* IP_addr) : port_(port), IP_addr_(IP_addr) {}
   ClientComponent() = default;
-  inline char* get() { status_ = fill_buf(); return recvBuff_; }
+  inline char* fetch() { status_ = fill_buf(); }
   inline char* get_buf() { return recvBuff_; }
   virtual ~ClientComponent();
 protected:
@@ -79,13 +97,13 @@ private:
   void receive(uint32_t*, int);
 };
 
-class ParseDecorator : public Client
+class PublishDecorator : public Client
 {
 public:
-  ParseDecorator(Client* C) :
+  PublishDecorator(Client* C) :
     comp_(C) {}
   int fill_buf() override;
-
+    void publish();
 private:
   Client* comp_;
 };

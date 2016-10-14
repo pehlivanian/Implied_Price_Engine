@@ -7,7 +7,7 @@ int main(int argc, char **argv)
   struct timeval beforeV, afterV;
 
   const int R = 25;
-  const int C = 100000;
+  const int C = 1000;
   
   long* MSDtimes[R];
   long* NSDtimes[R];
@@ -38,8 +38,8 @@ int main(int argc, char **argv)
 	  Graph* g = new MarketGraph(0);
 	  g->load(fn);
 	  
-	  ::dijkstra_visitor* dv = new ::dijkstra_visitor();
-	  ::bellmanford_visitor* bfv = new ::bellmanford_visitor();
+	  ::cat2_visitor* dv = new ::cat2_visitor();
+	  ::cat1_visitor* bfv = new ::cat1_visitor();
 	  
 	  for(int c=0; c<C; ++c)
 	    {
@@ -78,21 +78,21 @@ int main(int argc, char **argv)
 	}
     }
   
-  printf ("Table (micros) for Dijkstra Algorithm\n");
-  printf ("n\taverage\t\tmin\tmax\tstdev\t\t#\n");
-  buildTable(MSDtimes, R, C);
-  
-  printf ("Table (nanos) for Dijkstra Algorithm\n");
-  printf ("n\taverage\t\tmin\tmax\tstdev\t\t#\n");
-  buildTable(NSDtimes, R, C);
-
-  printf ("Table (micros) for Bellman-Ford Algorithm\n");
+  printf ("Table (micros) for Cat1 Algorithm\n");
   printf ("n\taverage\t\tmin\tmax\tstdev\t\t#\n");
   buildTable(MSBFtimes, R, C);
   
-  printf ("Table (nanos) for Bellman-Ford Algorithm\n");
+  printf ("Table (nanos) for Cat1 Algorithm\n");
   printf ("n\taverage\t\tmin\tmax\tstdev\t\t#\n");
   buildTable(NSBFtimes, R, C);
+
+  printf ("Table (micros) for Cat2 Algorithm\n");
+  printf ("n\taverage\t\tmin\tmax\tstdev\t\t#\n");
+  buildTable(MSDtimes, R, C);
+  
+  printf ("Table (nanos) for Cat2 Algorithm\n");
+  printf ("n\taverage\t\tmin\tmax\tstdev\t\t#\n");
+  buildTable(NSDtimes, R, C);
   
   return 0;
 }

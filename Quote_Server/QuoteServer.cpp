@@ -14,6 +14,16 @@
 
 const int BUF_SIZE = 1024;
 
+size_t file_size(char* filename)
+{
+  size_t fd = open(filename, O_RDONLY);
+  struct stat file_stat;
+  fstat(fd, &file_stat);
+  close(fd);
+
+  return file_stat.st_size;
+}
+
 int send(int num, int fd)
 {
   int converted_number = htonl(num);
@@ -28,16 +38,13 @@ int main(int argc, char **argv)
   int port = atoi(argv[1]);
   int listenfd = 0, connfd = 0;
   struct sockaddr_in serv_addr;
-  char* filename = "serveme.txt";
+  char* filename = (char *)"serveme.txt";
   size_t ret_in;
-  
-  // Enough size?
-  char sendBuff[1025*10];
+
   time_t ticks;
 
   listenfd = socket(AF_INET, SOCK_STREAM, 0);
   memset(&serv_addr, '0', sizeof(serv_addr));
-  memset(sendBuff, '0', sizeof(sendBuff));
 
   serv_addr.sin_family = AF_INET;
   serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
@@ -50,6 +57,12 @@ int main(int argc, char **argv)
   while(true)
     {
       connfd = accept(listenfd, (struct sockaddr*)NULL, NULL);
+
+        // Do this everytime in a tight loop so that we
+        // can avoid shutdown when underlygin file changes
+      size_t f_size = file_size(filename);
+      char sendBuff[f_size];
+      memset(sendBuff, '0', f_size);
 
       size_t input_fd = open(filename, O_RDONLY);
       if (input_fd == -1)
