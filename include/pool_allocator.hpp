@@ -2,6 +2,7 @@
 #define __POOL_ALLOCATOR_HPP__
 
 #include <cstddef>
+#include <cstdio>
 
 template <std::size_t N>
 class arena

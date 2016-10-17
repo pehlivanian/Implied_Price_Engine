@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/charles/git/Implied_Price_Engine
+CMAKE_SOURCE_DIR = /home/charles/ClionProjects/Implied_Price_Engine_All
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/charles/git/Implied_Price_Engine
+CMAKE_BINARY_DIR = /home/charles/ClionProjects/Implied_Price_Engine_All
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/charles/git/Implied_Price_Engine && $(CMAKE_COMMAND) -E cmake_progress_start /home/charles/git/Implied_Price_Engine/CMakeFiles /home/charles/git/Implied_Price_Engine/include/CMakeFiles/progress.marks
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 include/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/git/Implied_Price_Engine/CMakeFiles 0
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(CMAKE_COMMAND) -E cmake_progress_start /home/charles/ClionProjects/Implied_Price_Engine_All/CMakeFiles /home/charles/ClionProjects/Implied_Price_Engine_All/include/CMakeFiles/progress.marks
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 include/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/ClionProjects/Implied_Price_Engine_All/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 include/clean
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 include/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 include/preinstall
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 include/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 include/preinstall
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 include/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/charles/git/Implied_Price_Engine && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 include/CMakeFiles/IElib.dir/rule:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 include/CMakeFiles/IElib.dir/rule
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 include/CMakeFiles/IElib.dir/rule
 .PHONY : include/CMakeFiles/IElib.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ IElib: include/CMakeFiles/IElib.dir/rule
 
 # fast build rule for target.
 IElib/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/build
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/build
 .PHONY : IElib/fast
 
 BinaryHeap.o: BinaryHeap.cpp.o
@@ -131,7 +131,7 @@ BinaryHeap.o: BinaryHeap.cpp.o
 
 # target to build an object file
 BinaryHeap.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/BinaryHeap.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/BinaryHeap.cpp.o
 .PHONY : BinaryHeap.cpp.o
 
 BinaryHeap.i: BinaryHeap.cpp.i
@@ -140,7 +140,7 @@ BinaryHeap.i: BinaryHeap.cpp.i
 
 # target to preprocess a source file
 BinaryHeap.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/BinaryHeap.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/BinaryHeap.cpp.i
 .PHONY : BinaryHeap.cpp.i
 
 BinaryHeap.s: BinaryHeap.cpp.s
@@ -149,7 +149,7 @@ BinaryHeap.s: BinaryHeap.cpp.s
 
 # target to generate assembly for a file
 BinaryHeap.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/BinaryHeap.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/BinaryHeap.cpp.s
 .PHONY : BinaryHeap.cpp.s
 
 CMemPool.o: CMemPool.cpp.o
@@ -158,7 +158,7 @@ CMemPool.o: CMemPool.cpp.o
 
 # target to build an object file
 CMemPool.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/CMemPool.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/CMemPool.cpp.o
 .PHONY : CMemPool.cpp.o
 
 CMemPool.i: CMemPool.cpp.i
@@ -167,7 +167,7 @@ CMemPool.i: CMemPool.cpp.i
 
 # target to preprocess a source file
 CMemPool.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/CMemPool.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/CMemPool.cpp.i
 .PHONY : CMemPool.cpp.i
 
 CMemPool.s: CMemPool.cpp.s
@@ -176,7 +176,7 @@ CMemPool.s: CMemPool.cpp.s
 
 # target to generate assembly for a file
 CMemPool.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/CMemPool.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/CMemPool.cpp.s
 .PHONY : CMemPool.cpp.s
 
 Client.o: Client.cpp.o
@@ -185,7 +185,7 @@ Client.o: Client.cpp.o
 
 # target to build an object file
 Client.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Client.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Client.cpp.o
 .PHONY : Client.cpp.o
 
 Client.i: Client.cpp.i
@@ -194,7 +194,7 @@ Client.i: Client.cpp.i
 
 # target to preprocess a source file
 Client.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Client.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Client.cpp.i
 .PHONY : Client.cpp.i
 
 Client.s: Client.cpp.s
@@ -203,7 +203,7 @@ Client.s: Client.cpp.s
 
 # target to generate assembly for a file
 Client.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Client.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Client.cpp.s
 .PHONY : Client.cpp.s
 
 DataElement.o: DataElement.cpp.o
@@ -212,7 +212,7 @@ DataElement.o: DataElement.cpp.o
 
 # target to build an object file
 DataElement.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/DataElement.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/DataElement.cpp.o
 .PHONY : DataElement.cpp.o
 
 DataElement.i: DataElement.cpp.i
@@ -221,7 +221,7 @@ DataElement.i: DataElement.cpp.i
 
 # target to preprocess a source file
 DataElement.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/DataElement.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/DataElement.cpp.i
 .PHONY : DataElement.cpp.i
 
 DataElement.s: DataElement.cpp.s
@@ -230,7 +230,7 @@ DataElement.s: DataElement.cpp.s
 
 # target to generate assembly for a file
 DataElement.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/DataElement.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/DataElement.cpp.s
 .PHONY : DataElement.cpp.s
 
 Decomposer.o: Decomposer.cpp.o
@@ -239,7 +239,7 @@ Decomposer.o: Decomposer.cpp.o
 
 # target to build an object file
 Decomposer.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Decomposer.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Decomposer.cpp.o
 .PHONY : Decomposer.cpp.o
 
 Decomposer.i: Decomposer.cpp.i
@@ -248,7 +248,7 @@ Decomposer.i: Decomposer.cpp.i
 
 # target to preprocess a source file
 Decomposer.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Decomposer.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Decomposer.cpp.i
 .PHONY : Decomposer.cpp.i
 
 Decomposer.s: Decomposer.cpp.s
@@ -257,7 +257,7 @@ Decomposer.s: Decomposer.cpp.s
 
 # target to generate assembly for a file
 Decomposer.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Decomposer.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Decomposer.cpp.s
 .PHONY : Decomposer.cpp.s
 
 Graph.o: Graph.cpp.o
@@ -266,7 +266,7 @@ Graph.o: Graph.cpp.o
 
 # target to build an object file
 Graph.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Graph.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Graph.cpp.o
 .PHONY : Graph.cpp.o
 
 Graph.i: Graph.cpp.i
@@ -275,7 +275,7 @@ Graph.i: Graph.cpp.i
 
 # target to preprocess a source file
 Graph.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Graph.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Graph.cpp.i
 .PHONY : Graph.cpp.i
 
 Graph.s: Graph.cpp.s
@@ -284,7 +284,7 @@ Graph.s: Graph.cpp.s
 
 # target to generate assembly for a file
 Graph.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Graph.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Graph.cpp.s
 .PHONY : Graph.cpp.s
 
 ImpliedEngine.o: ImpliedEngine.cpp.o
@@ -293,7 +293,7 @@ ImpliedEngine.o: ImpliedEngine.cpp.o
 
 # target to build an object file
 ImpliedEngine.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedEngine.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedEngine.cpp.o
 .PHONY : ImpliedEngine.cpp.o
 
 ImpliedEngine.i: ImpliedEngine.cpp.i
@@ -302,7 +302,7 @@ ImpliedEngine.i: ImpliedEngine.cpp.i
 
 # target to preprocess a source file
 ImpliedEngine.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedEngine.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedEngine.cpp.i
 .PHONY : ImpliedEngine.cpp.i
 
 ImpliedEngine.s: ImpliedEngine.cpp.s
@@ -311,7 +311,7 @@ ImpliedEngine.s: ImpliedEngine.cpp.s
 
 # target to generate assembly for a file
 ImpliedEngine.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedEngine.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedEngine.cpp.s
 .PHONY : ImpliedEngine.cpp.s
 
 ImpliedQuoteSubscriber.o: ImpliedQuoteSubscriber.cpp.o
@@ -320,7 +320,7 @@ ImpliedQuoteSubscriber.o: ImpliedQuoteSubscriber.cpp.o
 
 # target to build an object file
 ImpliedQuoteSubscriber.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedQuoteSubscriber.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedQuoteSubscriber.cpp.o
 .PHONY : ImpliedQuoteSubscriber.cpp.o
 
 ImpliedQuoteSubscriber.i: ImpliedQuoteSubscriber.cpp.i
@@ -329,7 +329,7 @@ ImpliedQuoteSubscriber.i: ImpliedQuoteSubscriber.cpp.i
 
 # target to preprocess a source file
 ImpliedQuoteSubscriber.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedQuoteSubscriber.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedQuoteSubscriber.cpp.i
 .PHONY : ImpliedQuoteSubscriber.cpp.i
 
 ImpliedQuoteSubscriber.s: ImpliedQuoteSubscriber.cpp.s
@@ -338,7 +338,7 @@ ImpliedQuoteSubscriber.s: ImpliedQuoteSubscriber.cpp.s
 
 # target to generate assembly for a file
 ImpliedQuoteSubscriber.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedQuoteSubscriber.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedQuoteSubscriber.cpp.s
 .PHONY : ImpliedQuoteSubscriber.cpp.s
 
 ImpliedServer.o: ImpliedServer.cpp.o
@@ -347,7 +347,7 @@ ImpliedServer.o: ImpliedServer.cpp.o
 
 # target to build an object file
 ImpliedServer.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedServer.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedServer.cpp.o
 .PHONY : ImpliedServer.cpp.o
 
 ImpliedServer.i: ImpliedServer.cpp.i
@@ -356,7 +356,7 @@ ImpliedServer.i: ImpliedServer.cpp.i
 
 # target to preprocess a source file
 ImpliedServer.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedServer.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedServer.cpp.i
 .PHONY : ImpliedServer.cpp.i
 
 ImpliedServer.s: ImpliedServer.cpp.s
@@ -365,7 +365,7 @@ ImpliedServer.s: ImpliedServer.cpp.s
 
 # target to generate assembly for a file
 ImpliedServer.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedServer.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedServer.cpp.s
 .PHONY : ImpliedServer.cpp.s
 
 MarketGraph.o: MarketGraph.cpp.o
@@ -374,7 +374,7 @@ MarketGraph.o: MarketGraph.cpp.o
 
 # target to build an object file
 MarketGraph.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/MarketGraph.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/MarketGraph.cpp.o
 .PHONY : MarketGraph.cpp.o
 
 MarketGraph.i: MarketGraph.cpp.i
@@ -383,7 +383,7 @@ MarketGraph.i: MarketGraph.cpp.i
 
 # target to preprocess a source file
 MarketGraph.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/MarketGraph.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/MarketGraph.cpp.i
 .PHONY : MarketGraph.cpp.i
 
 MarketGraph.s: MarketGraph.cpp.s
@@ -392,7 +392,7 @@ MarketGraph.s: MarketGraph.cpp.s
 
 # target to generate assembly for a file
 MarketGraph.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/MarketGraph.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/MarketGraph.cpp.s
 .PHONY : MarketGraph.cpp.s
 
 SecPair.o: SecPair.cpp.o
@@ -401,7 +401,7 @@ SecPair.o: SecPair.cpp.o
 
 # target to build an object file
 SecPair.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/SecPair.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/SecPair.cpp.o
 .PHONY : SecPair.cpp.o
 
 SecPair.i: SecPair.cpp.i
@@ -410,7 +410,7 @@ SecPair.i: SecPair.cpp.i
 
 # target to preprocess a source file
 SecPair.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/SecPair.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/SecPair.cpp.i
 .PHONY : SecPair.cpp.i
 
 SecPair.s: SecPair.cpp.s
@@ -419,7 +419,7 @@ SecPair.s: SecPair.cpp.s
 
 # target to generate assembly for a file
 SecPair.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/SecPair.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/SecPair.cpp.s
 .PHONY : SecPair.cpp.s
 
 Trace.o: Trace.cpp.o
@@ -428,7 +428,7 @@ Trace.o: Trace.cpp.o
 
 # target to build an object file
 Trace.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Trace.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Trace.cpp.o
 .PHONY : Trace.cpp.o
 
 Trace.i: Trace.cpp.i
@@ -437,7 +437,7 @@ Trace.i: Trace.cpp.i
 
 # target to preprocess a source file
 Trace.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Trace.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Trace.cpp.i
 .PHONY : Trace.cpp.i
 
 Trace.s: Trace.cpp.s
@@ -446,7 +446,7 @@ Trace.s: Trace.cpp.s
 
 # target to generate assembly for a file
 Trace.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Trace.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Trace.cpp.s
 .PHONY : Trace.cpp.s
 
 Visitor.o: Visitor.cpp.o
@@ -455,7 +455,7 @@ Visitor.o: Visitor.cpp.o
 
 # target to build an object file
 Visitor.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Visitor.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Visitor.cpp.o
 .PHONY : Visitor.cpp.o
 
 Visitor.i: Visitor.cpp.i
@@ -464,7 +464,7 @@ Visitor.i: Visitor.cpp.i
 
 # target to preprocess a source file
 Visitor.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Visitor.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Visitor.cpp.i
 .PHONY : Visitor.cpp.i
 
 Visitor.s: Visitor.cpp.s
@@ -473,7 +473,7 @@ Visitor.s: Visitor.cpp.s
 
 # target to generate assembly for a file
 Visitor.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Visitor.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/Visitor.cpp.s
 .PHONY : Visitor.cpp.s
 
 benchmark.o: benchmark.cpp.o
@@ -482,7 +482,7 @@ benchmark.o: benchmark.cpp.o
 
 # target to build an object file
 benchmark.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/benchmark.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/benchmark.cpp.o
 .PHONY : benchmark.cpp.o
 
 benchmark.i: benchmark.cpp.i
@@ -491,7 +491,7 @@ benchmark.i: benchmark.cpp.i
 
 # target to preprocess a source file
 benchmark.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/benchmark.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/benchmark.cpp.i
 .PHONY : benchmark.cpp.i
 
 benchmark.s: benchmark.cpp.s
@@ -500,7 +500,7 @@ benchmark.s: benchmark.cpp.s
 
 # target to generate assembly for a file
 benchmark.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/benchmark.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/benchmark.cpp.s
 .PHONY : benchmark.cpp.s
 
 cat1_visitor.o: cat1_visitor.cpp.o
@@ -509,7 +509,7 @@ cat1_visitor.o: cat1_visitor.cpp.o
 
 # target to build an object file
 cat1_visitor.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/cat1_visitor.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/cat1_visitor.cpp.o
 .PHONY : cat1_visitor.cpp.o
 
 cat1_visitor.i: cat1_visitor.cpp.i
@@ -518,7 +518,7 @@ cat1_visitor.i: cat1_visitor.cpp.i
 
 # target to preprocess a source file
 cat1_visitor.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/cat1_visitor.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/cat1_visitor.cpp.i
 .PHONY : cat1_visitor.cpp.i
 
 cat1_visitor.s: cat1_visitor.cpp.s
@@ -527,7 +527,7 @@ cat1_visitor.s: cat1_visitor.cpp.s
 
 # target to generate assembly for a file
 cat1_visitor.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/cat1_visitor.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/cat1_visitor.cpp.s
 .PHONY : cat1_visitor.cpp.s
 
 cat2_visitor.o: cat2_visitor.cpp.o
@@ -536,7 +536,7 @@ cat2_visitor.o: cat2_visitor.cpp.o
 
 # target to build an object file
 cat2_visitor.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/cat2_visitor.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/cat2_visitor.cpp.o
 .PHONY : cat2_visitor.cpp.o
 
 cat2_visitor.i: cat2_visitor.cpp.i
@@ -545,7 +545,7 @@ cat2_visitor.i: cat2_visitor.cpp.i
 
 # target to preprocess a source file
 cat2_visitor.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/cat2_visitor.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/cat2_visitor.cpp.i
 .PHONY : cat2_visitor.cpp.i
 
 cat2_visitor.s: cat2_visitor.cpp.s
@@ -554,7 +554,7 @@ cat2_visitor.s: cat2_visitor.cpp.s
 
 # target to generate assembly for a file
 cat2_visitor.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/cat2_visitor.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/cat2_visitor.cpp.s
 .PHONY : cat2_visitor.cpp.s
 
 report.o: report.cpp.o
@@ -563,7 +563,7 @@ report.o: report.cpp.o
 
 # target to build an object file
 report.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/report.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/report.cpp.o
 .PHONY : report.cpp.o
 
 report.i: report.cpp.i
@@ -572,7 +572,7 @@ report.i: report.cpp.i
 
 # target to preprocess a source file
 report.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/report.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/report.cpp.i
 .PHONY : report.cpp.i
 
 report.s: report.cpp.s
@@ -581,7 +581,7 @@ report.s: report.cpp.s
 
 # target to generate assembly for a file
 report.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/report.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/report.cpp.s
 .PHONY : report.cpp.s
 
 threadpool.o: threadpool.cpp.o
@@ -590,7 +590,7 @@ threadpool.o: threadpool.cpp.o
 
 # target to build an object file
 threadpool.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/threadpool.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/threadpool.cpp.o
 .PHONY : threadpool.cpp.o
 
 threadpool.i: threadpool.cpp.i
@@ -599,7 +599,7 @@ threadpool.i: threadpool.cpp.i
 
 # target to preprocess a source file
 threadpool.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/threadpool.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/threadpool.cpp.i
 .PHONY : threadpool.cpp.i
 
 threadpool.s: threadpool.cpp.s
@@ -608,7 +608,7 @@ threadpool.s: threadpool.cpp.s
 
 # target to generate assembly for a file
 threadpool.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/threadpool.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/threadpool.cpp.s
 .PHONY : threadpool.cpp.s
 
 timing.o: timing.cpp.o
@@ -617,7 +617,7 @@ timing.o: timing.cpp.o
 
 # target to build an object file
 timing.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/timing.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/timing.cpp.o
 .PHONY : timing.cpp.o
 
 timing.i: timing.cpp.i
@@ -626,7 +626,7 @@ timing.i: timing.cpp.i
 
 # target to preprocess a source file
 timing.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/timing.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/timing.cpp.i
 .PHONY : timing.cpp.i
 
 timing.s: timing.cpp.s
@@ -635,7 +635,7 @@ timing.s: timing.cpp.s
 
 # target to generate assembly for a file
 timing.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/timing.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/timing.cpp.s
 .PHONY : timing.cpp.s
 
 # Help Target
@@ -715,6 +715,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/charles/git/Implied_Price_Engine && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

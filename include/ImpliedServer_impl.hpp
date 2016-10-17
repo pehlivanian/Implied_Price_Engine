@@ -30,7 +30,74 @@ ImpliedServer<N>::init_()
 
 template<int N>
 void
-ImpliedServer<N>::process()
+ImpliedServer<N>::profiled_process_tasks_()
+{
+    const int R = 10;
+    const int C = tasks_.size();
+
+    std::string WORK_DIR = "~/ClionProjects/Implied_Price_Engine_All/data/";
+
+    std::ofstream fsu("user_quote.dat");
+    std::ofstream fsi("implied_quote.dat");
+    auto q = (p_->IE_)->get_user_quote();
+    fsu << "Type";
+    fsi << "Type";
+    for(size_t i=0; i<q[0].size(); ++i)
+    {
+        fsu << ",Leg_" + std::to_string(i);
+        fsi << ",Leg_" + std::to_string(i);
+    }
+    fsu << "\n";
+    fsi << "\n";
+
+    long* Micro_times[R];
+
+    for(size_t i=0; i<R; ++i)
+    {
+        Micro_times[i] = (long *) malloc(C * sizeof(long));
+    }
+
+    struct timeval beforeV, afterV;
+
+    for(int r=0; r<R; ++r)
+            for(int c=0; c<C; ++c)
+            {
+                gettimeofday(&beforeV, 0);
+                // int res = (p_->pool_)->submit(tasks_[c]).get();
+                int res = tasks_[c]();
+                gettimeofday(&afterV, 0);
+                // std::cout << beforeV.tv_usec << " : " << afterV.tv_usec << "\n";
+                Micro_times[r][c] = diffTimer(&beforeV, &afterV);
+                if ((r == 0) && (c > 99) && ((c%10) == 0))
+                {
+
+                    (p_->IE_)->write_user_quote(c, fsu);
+                    (p_->IE_)->write_implied_quote(c, fsi);
+
+                }
+
+            }
+
+    fsu.close();
+    fsi.close();
+
+    printf("Table (micros) for Implied Quote Update Step\n");
+    printf ("n\taverage\t\tmin\tmax\tstdev\t\t#\n");
+    buildTable(Micro_times, R, C);
+
+}
+
+template<int N>
+void
+ImpliedServer<N>::process_tasks_()
+{
+    for(auto& task : tasks_)
+        int r = (p_->pool_)->submit(task).get();
+}
+
+template<int N>
+void
+ImpliedServer<N>::preload_tasks_()
 {
     using namespace std;
     using namespace rapidjson;
@@ -43,8 +110,8 @@ ImpliedServer<N>::process()
 
     // XXX
     // At least make this static
-    regex leg_pat(R"((Leg)([\d]{1})([\d]?))");
-    regex spread_pat(R"((Spread)([\d]{1})([\d]?))");
+    regex leg_pat(R"((Leg_)([\d]+))");
+    regex spread_pat(R"((Spread_)([\d]+)[_]([\d]+))");
     smatch match;
     string Inst;
     SecPair sp;
@@ -79,12 +146,8 @@ ImpliedServer<N>::process()
                 sz = static_cast<size_t>(document["size"].GetInt());
             }
             // Multi-threaded version call
-            auto fn = [this,&sp,&pc,&sz]() mutable { (p_->IE_)->publish_bid(sp, QUOTE(pc,sz)); return 0; };
-            // Submit to pool
-            int r = (p_->pool_)->submit(fn).get();
-
-            // Single-threaded version call
-            // (p_->IE_)->publish_bid(sp, QUOTE(pc, sz));
+            std::function<int()> fn = [this,sp,pc,sz]() mutable { (p_->IE_)->publish_bid(sp, QUOTE(pc,sz)); return 0; };
+            tasks_.push_back(fn);
         }
         else if (document.HasMember("ask"))
         {
@@ -105,13 +168,10 @@ ImpliedServer<N>::process()
                 pc = document["ask"].GetInt();
                 sz = static_cast<size_t>(document["size"].GetInt());
             }
-            // Multi-threaded version call
-            auto fn = [this,&sp,&pc,&sz]() mutable { (p_->IE_)->publish_ask(sp, QUOTE(pc,sz)); return 0; };
-            // Submit to pool
-            int r = (p_->pool_)->submit(fn).get();
 
-            // Single-threaded version call
-            // (p_->IE_)->publish_ask(sp, QUOTE(pc, sz));
+            // Multi-threaded version call
+            std::function<int()> fn = [this,sp,pc,sz]() mutable { (p_->IE_)->publish_ask(sp, QUOTE(pc,sz)); return 0; };
+            tasks_.push_back(fn);
         }
     }
 #undef ask_p
@@ -119,6 +179,5 @@ ImpliedServer<N>::process()
 #undef QUOTE
 
 }
-
 
 #endif

@@ -45,6 +45,9 @@ struct impl<ImpliedEngine<N>>
   int n_;
   int m_;
 
+    using atomic_price = std::atomic<int>;
+    using atomic_size = std::atomic<size_t>;
+
   std::vector<std::vector<std::pair<int, size_t>>>     uQuote_;
   std::vector<std::vector<std::pair<int, size_t>>>     iQuote_;
 
@@ -249,9 +252,9 @@ ImpliedEngine<N>::init_subscribers_()
 	      IQSubscriber->attach_ask(IBaskSubscriber);
 
 	      if (mkt.isPos())
-		(p_->quote_publishers_)[1][ind].attach_ask(IQSubscriber);
+		    (p_->quote_publishers_)[1][ind].attach_ask(IQSubscriber);
 	      else
-		(p_->quote_publishers_)[0][ind].attach_bid(IQSubscriber);
+		    (p_->quote_publishers_)[0][ind].attach_bid(IQSubscriber);
 
 	      ++eb;
 	    }
@@ -307,21 +310,21 @@ ImpliedEngine<N>::publish_ask(const SecPair& mkt, const QuotePublishEvent& pe)
 
 template<int N>
 void
-ImpliedEngine<N>::write_dot(int leg_num, char* filename)
+ImpliedEngine<N>::write_dot(int leg_num, char* filename) const
 {
   graph_utils::toDot((p_->G_)[leg_num], std::string(filename));
 }
 
 template<int N>
 void
-ImpliedEngine<N>::write_dot(int leg_num, char* filename, const std::vector<int>& d, const std::vector<int>& p)
+ImpliedEngine<N>::write_dot(int leg_num, char* filename, const std::vector<int>& d, const std::vector<int>& p) const
 {
     graph_utils::toDot((p_->G_)[leg_num], std::string(filename), d, p);
 }
 
 template<int N>
 void
-ImpliedEngine<N>::write_user_curve()
+ImpliedEngine<N>::write_user_curve() const
 {
     std::cout << " : ===========\n";
     std::cout << " : USER PRICES\n";
@@ -331,7 +334,7 @@ ImpliedEngine<N>::write_user_curve()
 
 template<int N>
 void
-ImpliedEngine<N>::write_implied_curve()
+ImpliedEngine<N>::write_implied_curve() const
 {
     std::cout << " : ==============\n";
     std::cout << " : IMPLIED PRICES\n";
@@ -341,7 +344,7 @@ ImpliedEngine<N>::write_implied_curve()
 
 template<int N>
 void
-ImpliedEngine<N>::write_merged_curve()
+ImpliedEngine<N>::write_merged_curve() const
 {
     std::cout << " : =============\n";
     std::cout << " : MERGED PRICES\n";
@@ -378,7 +381,7 @@ ImpliedEngine<N>::write_merged_curve()
 
 template<int N>
 void
-ImpliedEngine<N>::write_curve_(const std::vector<std::vector<std::pair<int, size_t>>>& quote)
+ImpliedEngine<N>::write_curve_(const std::vector<std::vector<std::pair<int, size_t>>>& quote) const
   {
     int l = 0;
     std::for_each((quote[1]).begin(), (quote[1]).end(),
@@ -411,6 +414,42 @@ ImpliedEngine<N>::write_curve_(const std::vector<std::vector<std::pair<int, size
                     [&l](auto a){std::cout << std::setw(15) << "================ "; });
     std::cout << std::endl;
   }
+
+template<int N>
+void
+ImpliedEngine<N>::write_user_quote(int c, std::ostream& fsu) const
+{
+    write_quote_(get_implied_quote(), c, fsu);
+}
+
+template<int N>
+void
+ImpliedEngine<N>::write_implied_quote(int c, std::ostream& fsi) const
+{
+    write_quote_(get_user_quote(), c, fsi);
+}
+
+template<int N>
+void
+ImpliedEngine<N>::write_quote_(const std::vector<std::vector<std::pair<int, size_t>>>& q, int c, std::ostream& fs) const
+{
+    fs << "ask_price_it" + std::to_string(c);
+    for(auto k : std::vector<std::pair<int, size_t>>(q[1].begin(), q[1].end()))
+        fs << "," << k.first;
+    fs << "\n";
+    fs << "ask_size_it" + std::to_string(c);;
+    for(auto k : std::vector<std::pair<int, size_t>>(q[1].begin(), q[1].end()))
+        fs << "," << k.second;
+    fs << "\n";
+    fs << "bid_price_it" + std::to_string(c);;
+    for(auto k : std::vector<std::pair<int, size_t>>(q[0].begin(), q[0].end()))
+        fs << "," << k.first;
+    fs << "\n";
+    fs << "bid_size_it" + std::to_string(c);;
+    for(auto k : std::vector<std::pair<int, size_t>>(q[0].begin(), q[0].end()))
+        fs << "," << k.second;
+    fs << "\n";
+}
 
 template<int N>
 void

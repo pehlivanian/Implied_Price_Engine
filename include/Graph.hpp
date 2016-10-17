@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <limits>
-#include <forward_list>
 #include <vector>
 #include <string>
 #include <cstring> // strcmp()
@@ -17,16 +16,16 @@
 #include <boost/thread/shared_mutex.hpp>
 
 #include "DataElement.hpp"
-#include "pool_allocator.hpp"
+#include "IE_types.hpp"
 
 const size_t NUM_INSERTS = 100;
 const size_t POOL_SIZE = sizeof(std::pair<int,std::pair<int,size_t>>) * NUM_INSERTS;
 
-using IPair = std::pair<int, std::pair<int, size_t>>;
-template<class T, std::size_t N> using A = stack_allocator<T, N>;
-template<class T, std::size_t N> using ForwardList = std::forward_list<T, A<T,N>>;
+using namespace IE_types;
+
 using VertexList = ForwardList<IPair, POOL_SIZE>;
-using VertexIterator = VertexList::const_iterator;
+using VertexIterator = VertexList::iterator;
+using CVertexIterator = VertexList::const_iterator;
 
 enum vertexColor { White, Gray, Black };
 enum edgeType { Tree, Backward, Forward, Cross };
@@ -41,7 +40,7 @@ using SERIALIZER_R = boost::shared_lock<boost::shared_mutex>;
 class Graph : public DataElement
 {
 public:
-  using Graph_iterator = VertexList::const_iterator;
+  using Graph_iterator = VertexList::iterator;
   Graph() : n_(0), directed_(true) 
   {
     arena<POOL_SIZE>* ar = new arena<POOL_SIZE>{};
@@ -74,10 +73,10 @@ public:
     void addEdge(int, int);
   void addEdge(int, int, int, int);
   bool removeEdge(int, int);
-  bool updateEdgeWeight(int, int, int, int);
+  bool updateEdgeWeight(int, int, int, size_t);
 
-  VertexIterator begin(int u) const { return vertices_[u].begin(); }
-  VertexIterator end(int u) const { return vertices_[u].end(); }
+  VertexIterator begin(int u) { return vertices_[u].begin(); }
+  VertexIterator end(int u) { return vertices_[u].end(); }
 
   void load(std::string filename);			 
 

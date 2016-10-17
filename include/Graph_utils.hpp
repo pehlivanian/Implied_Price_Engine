@@ -34,7 +34,6 @@ using graph_t = boost::adjacency_list<listS, vecS, directedS,
 using Vertex = graph_traits<graph_t>::vertex_descriptor;
 using vIt = graph_traits<graph_t>::vertex_iterator;
 using Vertexcont = std::list<Vertex>;
-using vContIt = Vertexcont::const_iterator;
 using outIt = graph_traits<graph_t>::out_edge_iterator;
 using inIt = graph_traits<graph_t>::in_edge_iterator;
 

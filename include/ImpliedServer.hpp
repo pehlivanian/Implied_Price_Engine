@@ -1,12 +1,22 @@
 #ifndef __IMPLIEDSERVER_HPP__
 #define __IMPLIEDSERVER_HPP__
 
+#include <stdio.h>
+#include <string>
+#include <time.h>
+#include <sys/time.h>
+#include <vector>
+#include <algorithm>
 #include <memory>
 #include <regex>
 #include <sstream>
+#include <functional>
 
 #include "rapidjson/document.h"
 #include "rapidjson/prettywriter.h"
+
+#include "report.hpp"
+#include "problem.hpp"
 
 #include "ImpliedEngine.hpp"
 #include "Client.hpp"
@@ -25,10 +35,9 @@ template<int N>
 class ImpliedServer
 {
 public:
-
     ImpliedServer(bool process_feed=true) :
             p_(std::make_unique<impl<ImpliedServer<N>>>(process_feed)) { init_(); }
-    void process();
+    void process() { preload_tasks_(); profiled_process_tasks_(); };
 
     // Here come the delegators
     void publish_bid(const SecPair& sp, const QuotePublishEvent& e)  { (p_->IE_)->publish_bid(sp, e); }
@@ -56,8 +65,13 @@ public:
     Price_Size_Pair get_impied_ask(int leg) const  { return (p_->IE_)->get_implied_ask(leg); }
 
 private:
+    void preload_tasks_();
+    void process_tasks_();
+    void profiled_process_tasks_();
+
     void init_();
     std::unique_ptr<impl<ImpliedServer>> p_;
+    std::vector<std::function<int()>> tasks_;   // Task queue used to preload for timing experiments
 };
 
 #undef QUOTE

@@ -10,7 +10,7 @@
 #include "BookSubscriber.hpp"
 #include "BookPublisher.hpp"
 #include "MarketGraph.hpp"
-#include "cat1_visitor.hpp"
+#include "cat2_visitor.hpp"
 
 using Price_Size_Pair = std::pair<int, size_t>;
 using QuotePublishEvent = QuoteSubscriber<Price_Size_Pair>::QuotePublishEvent;
@@ -24,8 +24,8 @@ public:
     v1_(v1),
     v2_(v2),
     G_(G),
-    ask_visitor_(new cat1_visitor(0)),
-    bid_visitor_(new cat1_visitor(1)),
+    ask_visitor_(new cat2_visitor(0)),
+    bid_visitor_(new cat2_visitor(1)),
     leg_(leg)
   {}
   ~ImpliedQuoteSubscriber() = default;
@@ -38,8 +38,8 @@ private:
   int v1_;
   int v2_;
   MarketGraph *G_;
-  cat1_visitor* ask_visitor_;
-  cat1_visitor* bid_visitor_;
+  cat2_visitor* ask_visitor_;
+  cat2_visitor* bid_visitor_;
   int leg_;  
 };
 

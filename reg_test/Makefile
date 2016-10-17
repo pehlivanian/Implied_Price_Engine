@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/charles/git/Implied_Price_Engine
+CMAKE_SOURCE_DIR = /home/charles/ClionProjects/Implied_Price_Engine_All
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/charles/git/Implied_Price_Engine
+CMAKE_BINARY_DIR = /home/charles/ClionProjects/Implied_Price_Engine_All
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/charles/git/Implied_Price_Engine && $(CMAKE_COMMAND) -E cmake_progress_start /home/charles/git/Implied_Price_Engine/CMakeFiles /home/charles/git/Implied_Price_Engine/reg_test/CMakeFiles/progress.marks
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 reg_test/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/git/Implied_Price_Engine/CMakeFiles 0
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(CMAKE_COMMAND) -E cmake_progress_start /home/charles/ClionProjects/Implied_Price_Engine_All/CMakeFiles /home/charles/ClionProjects/Implied_Price_Engine_All/reg_test/CMakeFiles/progress.marks
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 reg_test/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/ClionProjects/Implied_Price_Engine_All/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 reg_test/clean
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 reg_test/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 reg_test/preinstall
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 reg_test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 reg_test/preinstall
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 reg_test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/charles/git/Implied_Price_Engine && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 reg_test/CMakeFiles/Threadpool_test.dir/rule:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 reg_test/CMakeFiles/Threadpool_test.dir/rule
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 reg_test/CMakeFiles/Threadpool_test.dir/rule
 .PHONY : reg_test/CMakeFiles/Threadpool_test.dir/rule
 
 # Convenience name for target.
@@ -122,12 +122,12 @@ Threadpool_test: reg_test/CMakeFiles/Threadpool_test.dir/rule
 
 # fast build rule for target.
 Threadpool_test/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/Threadpool_test.dir/build.make reg_test/CMakeFiles/Threadpool_test.dir/build
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/Threadpool_test.dir/build.make reg_test/CMakeFiles/Threadpool_test.dir/build
 .PHONY : Threadpool_test/fast
 
 # Convenience name for target.
 reg_test/CMakeFiles/SecPair_test.dir/rule:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 reg_test/CMakeFiles/SecPair_test.dir/rule
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 reg_test/CMakeFiles/SecPair_test.dir/rule
 .PHONY : reg_test/CMakeFiles/SecPair_test.dir/rule
 
 # Convenience name for target.
@@ -137,12 +137,12 @@ SecPair_test: reg_test/CMakeFiles/SecPair_test.dir/rule
 
 # fast build rule for target.
 SecPair_test/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/SecPair_test.dir/build.make reg_test/CMakeFiles/SecPair_test.dir/build
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/SecPair_test.dir/build.make reg_test/CMakeFiles/SecPair_test.dir/build
 .PHONY : SecPair_test/fast
 
 # Convenience name for target.
 reg_test/CMakeFiles/ImpliedEngine_test.dir/rule:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 reg_test/CMakeFiles/ImpliedEngine_test.dir/rule
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 reg_test/CMakeFiles/ImpliedEngine_test.dir/rule
 .PHONY : reg_test/CMakeFiles/ImpliedEngine_test.dir/rule
 
 # Convenience name for target.
@@ -152,12 +152,12 @@ ImpliedEngine_test: reg_test/CMakeFiles/ImpliedEngine_test.dir/rule
 
 # fast build rule for target.
 ImpliedEngine_test/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/ImpliedEngine_test.dir/build.make reg_test/CMakeFiles/ImpliedEngine_test.dir/build
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/ImpliedEngine_test.dir/build.make reg_test/CMakeFiles/ImpliedEngine_test.dir/build
 .PHONY : ImpliedEngine_test/fast
 
 # Convenience name for target.
 reg_test/CMakeFiles/Clienttest.dir/rule:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 reg_test/CMakeFiles/Clienttest.dir/rule
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 reg_test/CMakeFiles/Clienttest.dir/rule
 .PHONY : reg_test/CMakeFiles/Clienttest.dir/rule
 
 # Convenience name for target.
@@ -167,7 +167,7 @@ Clienttest: reg_test/CMakeFiles/Clienttest.dir/rule
 
 # fast build rule for target.
 Clienttest/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/Clienttest.dir/build.make reg_test/CMakeFiles/Clienttest.dir/build
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/Clienttest.dir/build.make reg_test/CMakeFiles/Clienttest.dir/build
 .PHONY : Clienttest/fast
 
 Clienttest.o: Clienttest.cpp.o
@@ -176,7 +176,7 @@ Clienttest.o: Clienttest.cpp.o
 
 # target to build an object file
 Clienttest.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/Clienttest.dir/build.make reg_test/CMakeFiles/Clienttest.dir/Clienttest.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/Clienttest.dir/build.make reg_test/CMakeFiles/Clienttest.dir/Clienttest.cpp.o
 .PHONY : Clienttest.cpp.o
 
 Clienttest.i: Clienttest.cpp.i
@@ -185,7 +185,7 @@ Clienttest.i: Clienttest.cpp.i
 
 # target to preprocess a source file
 Clienttest.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/Clienttest.dir/build.make reg_test/CMakeFiles/Clienttest.dir/Clienttest.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/Clienttest.dir/build.make reg_test/CMakeFiles/Clienttest.dir/Clienttest.cpp.i
 .PHONY : Clienttest.cpp.i
 
 Clienttest.s: Clienttest.cpp.s
@@ -194,7 +194,7 @@ Clienttest.s: Clienttest.cpp.s
 
 # target to generate assembly for a file
 Clienttest.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/Clienttest.dir/build.make reg_test/CMakeFiles/Clienttest.dir/Clienttest.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/Clienttest.dir/build.make reg_test/CMakeFiles/Clienttest.dir/Clienttest.cpp.s
 .PHONY : Clienttest.cpp.s
 
 ImpliedEngine_test.o: ImpliedEngine_test.cpp.o
@@ -203,7 +203,7 @@ ImpliedEngine_test.o: ImpliedEngine_test.cpp.o
 
 # target to build an object file
 ImpliedEngine_test.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/ImpliedEngine_test.dir/build.make reg_test/CMakeFiles/ImpliedEngine_test.dir/ImpliedEngine_test.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/ImpliedEngine_test.dir/build.make reg_test/CMakeFiles/ImpliedEngine_test.dir/ImpliedEngine_test.cpp.o
 .PHONY : ImpliedEngine_test.cpp.o
 
 ImpliedEngine_test.i: ImpliedEngine_test.cpp.i
@@ -212,7 +212,7 @@ ImpliedEngine_test.i: ImpliedEngine_test.cpp.i
 
 # target to preprocess a source file
 ImpliedEngine_test.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/ImpliedEngine_test.dir/build.make reg_test/CMakeFiles/ImpliedEngine_test.dir/ImpliedEngine_test.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/ImpliedEngine_test.dir/build.make reg_test/CMakeFiles/ImpliedEngine_test.dir/ImpliedEngine_test.cpp.i
 .PHONY : ImpliedEngine_test.cpp.i
 
 ImpliedEngine_test.s: ImpliedEngine_test.cpp.s
@@ -221,7 +221,7 @@ ImpliedEngine_test.s: ImpliedEngine_test.cpp.s
 
 # target to generate assembly for a file
 ImpliedEngine_test.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/ImpliedEngine_test.dir/build.make reg_test/CMakeFiles/ImpliedEngine_test.dir/ImpliedEngine_test.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/ImpliedEngine_test.dir/build.make reg_test/CMakeFiles/ImpliedEngine_test.dir/ImpliedEngine_test.cpp.s
 .PHONY : ImpliedEngine_test.cpp.s
 
 SecPair_test.o: SecPair_test.cpp.o
@@ -230,7 +230,7 @@ SecPair_test.o: SecPair_test.cpp.o
 
 # target to build an object file
 SecPair_test.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/SecPair_test.dir/build.make reg_test/CMakeFiles/SecPair_test.dir/SecPair_test.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/SecPair_test.dir/build.make reg_test/CMakeFiles/SecPair_test.dir/SecPair_test.cpp.o
 .PHONY : SecPair_test.cpp.o
 
 SecPair_test.i: SecPair_test.cpp.i
@@ -239,7 +239,7 @@ SecPair_test.i: SecPair_test.cpp.i
 
 # target to preprocess a source file
 SecPair_test.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/SecPair_test.dir/build.make reg_test/CMakeFiles/SecPair_test.dir/SecPair_test.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/SecPair_test.dir/build.make reg_test/CMakeFiles/SecPair_test.dir/SecPair_test.cpp.i
 .PHONY : SecPair_test.cpp.i
 
 SecPair_test.s: SecPair_test.cpp.s
@@ -248,7 +248,7 @@ SecPair_test.s: SecPair_test.cpp.s
 
 # target to generate assembly for a file
 SecPair_test.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/SecPair_test.dir/build.make reg_test/CMakeFiles/SecPair_test.dir/SecPair_test.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/SecPair_test.dir/build.make reg_test/CMakeFiles/SecPair_test.dir/SecPair_test.cpp.s
 .PHONY : SecPair_test.cpp.s
 
 Threadpool_test.o: Threadpool_test.cpp.o
@@ -257,7 +257,7 @@ Threadpool_test.o: Threadpool_test.cpp.o
 
 # target to build an object file
 Threadpool_test.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/Threadpool_test.dir/build.make reg_test/CMakeFiles/Threadpool_test.dir/Threadpool_test.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/Threadpool_test.dir/build.make reg_test/CMakeFiles/Threadpool_test.dir/Threadpool_test.cpp.o
 .PHONY : Threadpool_test.cpp.o
 
 Threadpool_test.i: Threadpool_test.cpp.i
@@ -266,7 +266,7 @@ Threadpool_test.i: Threadpool_test.cpp.i
 
 # target to preprocess a source file
 Threadpool_test.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/Threadpool_test.dir/build.make reg_test/CMakeFiles/Threadpool_test.dir/Threadpool_test.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/Threadpool_test.dir/build.make reg_test/CMakeFiles/Threadpool_test.dir/Threadpool_test.cpp.i
 .PHONY : Threadpool_test.cpp.i
 
 Threadpool_test.s: Threadpool_test.cpp.s
@@ -275,7 +275,7 @@ Threadpool_test.s: Threadpool_test.cpp.s
 
 # target to generate assembly for a file
 Threadpool_test.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f reg_test/CMakeFiles/Threadpool_test.dir/build.make reg_test/CMakeFiles/Threadpool_test.dir/Threadpool_test.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f reg_test/CMakeFiles/Threadpool_test.dir/build.make reg_test/CMakeFiles/Threadpool_test.dir/Threadpool_test.cpp.s
 .PHONY : Threadpool_test.cpp.s
 
 # Help Target
@@ -313,6 +313,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/charles/git/Implied_Price_Engine && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
