@@ -9,7 +9,7 @@
 \usepackage[margin=1.2in]{geometry}
 \lhead{Charles Pehlivanian}
 \chead{October 15, 2016}
-\rhead{BRFSS Proposal}
+\rhead{Implied Engine Documentation [Brief]}
 \cfoot{\thepage}
 \pagestyle{fancy}
 
@@ -77,6 +77,8 @@ struct impl<ImpliedServer<N>>
 
 \end{verbatim}
 
+We use the Eigen library for our linear algebra engine, and custom data structures, custom allocators, fast forward{\_}list, fast binary heap, fast, customized  graph search/traversal algorithms for efficiency.
+
 Within the ImpliedEngine<N> class, the main calculation algorithm makes use of some notions from linear algebra and graph theory. A typical graph for a 12-leg problem is shown, without explanation.
 
 \includegraphics[scale=1.25]{/home/charles/ClionProjects/Implied_Price_Engine_All/docs/test_case.pdf}
@@ -99,6 +101,8 @@ The qualitative fit is good, with constant $C=.1223$. The fit was performed usin
 
 
 We also can calculate the update time (time start: immediately after incoming quote is parsed, time end: full update of quote objects and task returns success).  The following tables show times for a single update step (defined above) on a 4-core CentOS linux commodity machine. Times are in microseconds. Note that this time includes an update of the user quote object with the incoming quote, a step that would have to be performed in any case whether we were computing implied prices or not.
+
+Benchmark tests were run on a 2.3GHz Intel Xeon E5-2686 v4 Broadwell, 4-core machine with 16Gb RAM.
  
 \clearpage
 \begin{table}
@@ -256,13 +260,12 @@ N & Average & Min & Max & Stddev & Num \\
 \end{table}
 
 \clearpage
-\section{Curve Evolution}
+\section*{Curve Evolution}
 
 This is a typical snapshot of the user vs. implied price (no size) for a simulated data set. The simulator produces prices in legs and calendar spread contracts, maintaining no-arbitrage conditions across the curve, and producing realistic bid-ask spreads and shape throughout the curve. This snapshot represents the market at sequence number 1350.
 
 
-The implied quote curve gives a more comprehensive, arguably better notion of fair value across the curve.
-
+The implied quote curve gives a more comprehensive, arguably better notion of fair value across the curve. Note that implied prices are narrower starting at about the second or third leg, matching experience in these markets.
 
 
 A full evolution for a randomly selected interval of sequence numbers is given in the file {\it quote{\_}evolution.pdf}.
