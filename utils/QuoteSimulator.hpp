@@ -122,12 +122,12 @@ QuoteSimulator<N>::create_quotes_()
     int num_legs = IS_.get_num_legs();
 
     for(size_t i=0; i<num_legs; ++i) {
-        quote q = quote(quote::QUOTE_TYPE::Bid, SecPair(i, -1, 1), 4604 + (i * 100), 10);
+        quote q = quote(quote::QUOTE_TYPE::Bid, SecPair(i, -1, 1), 4604 + (i * 2), 10);
         quotes_[quote_count++] = q;
         IS_.publish_bid(q.sp_, q.p_, q.s_);
     }
     for(size_t i=0; i<num_legs; ++i) {
-        quote q = quote(quote::QUOTE_TYPE::Ask, SecPair(i, -1, 1), 4606 + (i * 102), 10);
+        quote q = quote(quote::QUOTE_TYPE::Ask, SecPair(i, -1, 1), 4606 + (i * 4), 10);
         quotes_[quote_count++] = q;
         IS_.publish_ask(q.sp_, q.p_, q.s_);
     }
@@ -171,7 +171,7 @@ QuoteSimulator<N>::create_quotes_()
         if ((inst_type == 0) || (leg_num == num_legs-1)) {
             switch (t) {
                 case quote::QUOTE_TYPE::Bid :
-                    curr_price = move_bid_price(curr_bid0, curr_ask0, price_move_type, 0);
+                    curr_price = move_bid_price(curr_bid0, curr_ask0, price_move_type, inc);
                     try {
                         IS_.publish_bid(SecPair(leg_num, -1, 1), QUOTE(curr_price, sz));
                     }
@@ -182,7 +182,7 @@ QuoteSimulator<N>::create_quotes_()
                     }
                     break;
                 case quote::QUOTE_TYPE::Ask :
-                    curr_price = move_ask_price(curr_bid0, curr_ask0, price_move_type, 0);
+                    curr_price = move_ask_price(curr_bid0, curr_ask0, price_move_type, inc);
                     try {
                         IS_.publish_ask(SecPair(leg_num, -1, 1), QUOTE(curr_price, sz));
                     }

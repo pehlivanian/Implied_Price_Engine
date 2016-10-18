@@ -245,9 +245,9 @@ ImpliedEngine<N>::init_subscribers_()
 	      SecPair mkt = eb->second;
 	      int ind = (p_->Decomposer_)->node_from_market_decomp(mkt.abs());
 
-	      IQSub IQSubscriber = std::make_shared<ImpliedQuoteSubscriber>(v1, v2, (p_->G_)[i], i);
+	      IQSub IQSubscriber     = std::make_shared<ImpliedQuoteSubscriber>(v1, v2, (p_->G_)[i], i);
 	      IBSub IBbidSubscriber  = std::make_shared<ImpliedBookSubscriber>(&(p_->iQuote_[0][i]));
-	      IBSub IBaskSubscriber = std::make_shared<ImpliedBookSubscriber>(&(p_->iQuote_[1][i]));
+	      IBSub IBaskSubscriber  = std::make_shared<ImpliedBookSubscriber>(&(p_->iQuote_[1][i]));
 	      IQSubscriber->attach_bid(IBbidSubscriber);
 	      IQSubscriber->attach_ask(IBaskSubscriber);
 
@@ -419,14 +419,14 @@ template<int N>
 void
 ImpliedEngine<N>::write_user_quote(int c, std::ostream& fsu) const
 {
-    write_quote_(get_implied_quote(), c, fsu);
+    write_quote_(get_user_quote(), c, fsu);
 }
 
 template<int N>
 void
 ImpliedEngine<N>::write_implied_quote(int c, std::ostream& fsi) const
 {
-    write_quote_(get_user_quote(), c, fsi);
+    write_quote_(get_implied_quote(), c, fsi);
 }
 
 template<int N>

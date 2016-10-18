@@ -10,8 +10,8 @@ int main(int argc, char **argv)
 
   // quote_msg *qm = new quote_msg(file_buf);
 
-    using IS8 = ImpliedServer<8>;
-    IS8* IS = new IS8;
+    using IS12 = ImpliedServer<12>;
+    IS12* IS = new IS12;
 
     // std::cout << IS->get_buf() << "\n";
     IS->process();

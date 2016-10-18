@@ -32,13 +32,13 @@ template<int N>
 void
 ImpliedServer<N>::profiled_process_tasks_()
 {
-    const int R = 10;
+    const int R = 25;
     const int C = tasks_.size();
 
     std::string WORK_DIR = "~/ClionProjects/Implied_Price_Engine_All/data/";
 
-    std::ofstream fsu("user_quote.dat");
-    std::ofstream fsi("implied_quote.dat");
+    std::ofstream fsu("./data/user_quote.dat");
+    std::ofstream fsi("./data/implied_quote.dat");
     auto q = (p_->IE_)->get_user_quote();
     fsu << "Type";
     fsi << "Type";
