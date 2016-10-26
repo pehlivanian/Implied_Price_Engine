@@ -368,6 +368,33 @@ ImpliedServer.cpp.s:
 	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/ImpliedServer.cpp.s
 .PHONY : ImpliedServer.cpp.s
 
+LW_threadpool.o: LW_threadpool.cpp.o
+
+.PHONY : LW_threadpool.o
+
+# target to build an object file
+LW_threadpool.cpp.o:
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/LW_threadpool.cpp.o
+.PHONY : LW_threadpool.cpp.o
+
+LW_threadpool.i: LW_threadpool.cpp.i
+
+.PHONY : LW_threadpool.i
+
+# target to preprocess a source file
+LW_threadpool.cpp.i:
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/LW_threadpool.cpp.i
+.PHONY : LW_threadpool.cpp.i
+
+LW_threadpool.s: LW_threadpool.cpp.s
+
+.PHONY : LW_threadpool.s
+
+# target to generate assembly for a file
+LW_threadpool.cpp.s:
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f include/CMakeFiles/IElib.dir/build.make include/CMakeFiles/IElib.dir/LW_threadpool.cpp.s
+.PHONY : LW_threadpool.cpp.s
+
 MarketGraph.o: MarketGraph.cpp.o
 
 .PHONY : MarketGraph.o
@@ -674,6 +701,9 @@ help:
 	@echo "... ImpliedServer.o"
 	@echo "... ImpliedServer.i"
 	@echo "... ImpliedServer.s"
+	@echo "... LW_threadpool.o"
+	@echo "... LW_threadpool.i"
+	@echo "... LW_threadpool.s"
 	@echo "... MarketGraph.o"
 	@echo "... MarketGraph.i"
 	@echo "... MarketGraph.s"

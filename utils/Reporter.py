@@ -11,12 +11,10 @@ from sklearn.linear_model import LinearRegression
 import scipy.odr.odrpack as odr
 from Reporter_impl import *
 
-import pdb
-
 class DataElementVisitor(object):
     def __init__(self):
         self.impl = Reporter_impl()
-    def visit(selself, DataElement):
+    def visit(self, DataElement):
         pass
 
 class UservImpliedReporter(DataElementVisitor):
@@ -25,7 +23,6 @@ class UservImpliedReporter(DataElementVisitor):
         self.outpath = outpath
         self.nameStr = nameStr
         self.pdf = pdf
-
 
     def visit(self, DataElement):
         UservImpliedReport(self, DataElement)

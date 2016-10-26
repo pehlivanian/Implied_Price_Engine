@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/charles/git/Implied_Price_Engine
+CMAKE_SOURCE_DIR = /home/charles/ClionProjects/Implied_Price_Engine_All
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/charles/git/Implied_Price_Engine
+CMAKE_BINARY_DIR = /home/charles/ClionProjects/Implied_Price_Engine_All
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/charles/git/Implied_Price_Engine && $(CMAKE_COMMAND) -E cmake_progress_start /home/charles/git/Implied_Price_Engine/CMakeFiles /home/charles/git/Implied_Price_Engine/Timed_examples/CMakeFiles/progress.marks
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/git/Implied_Price_Engine/CMakeFiles 0
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(CMAKE_COMMAND) -E cmake_progress_start /home/charles/ClionProjects/Implied_Price_Engine_All/CMakeFiles /home/charles/ClionProjects/Implied_Price_Engine_All/Timed_examples/CMakeFiles/progress.marks
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/ClionProjects/Implied_Price_Engine_All/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/clean
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/preinstall
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/preinstall
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/charles/git/Implied_Price_Engine && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Timed_examples/CMakeFiles/mempooltest.dir/rule:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/mempooltest.dir/rule
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/mempooltest.dir/rule
 .PHONY : Timed_examples/CMakeFiles/mempooltest.dir/rule
 
 # Convenience name for target.
@@ -122,12 +122,12 @@ mempooltest: Timed_examples/CMakeFiles/mempooltest.dir/rule
 
 # fast build rule for target.
 mempooltest/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/mempooltest.dir/build.make Timed_examples/CMakeFiles/mempooltest.dir/build
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/mempooltest.dir/build.make Timed_examples/CMakeFiles/mempooltest.dir/build
 .PHONY : mempooltest/fast
 
 # Convenience name for target.
 Timed_examples/CMakeFiles/grouptest.dir/rule:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/grouptest.dir/rule
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/grouptest.dir/rule
 .PHONY : Timed_examples/CMakeFiles/grouptest.dir/rule
 
 # Convenience name for target.
@@ -137,12 +137,12 @@ grouptest: Timed_examples/CMakeFiles/grouptest.dir/rule
 
 # fast build rule for target.
 grouptest/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/grouptest.dir/build.make Timed_examples/CMakeFiles/grouptest.dir/build
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/grouptest.dir/build.make Timed_examples/CMakeFiles/grouptest.dir/build
 .PHONY : grouptest/fast
 
 # Convenience name for target.
 Timed_examples/CMakeFiles/gentest.dir/rule:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/gentest.dir/rule
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/gentest.dir/rule
 .PHONY : Timed_examples/CMakeFiles/gentest.dir/rule
 
 # Convenience name for target.
@@ -152,12 +152,12 @@ gentest: Timed_examples/CMakeFiles/gentest.dir/rule
 
 # fast build rule for target.
 gentest/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/gentest.dir/build.make Timed_examples/CMakeFiles/gentest.dir/build
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/gentest.dir/build.make Timed_examples/CMakeFiles/gentest.dir/build
 .PHONY : gentest/fast
 
 # Convenience name for target.
 Timed_examples/CMakeFiles/typetest.dir/rule:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/typetest.dir/rule
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/typetest.dir/rule
 .PHONY : Timed_examples/CMakeFiles/typetest.dir/rule
 
 # Convenience name for target.
@@ -167,12 +167,12 @@ typetest: Timed_examples/CMakeFiles/typetest.dir/rule
 
 # fast build rule for target.
 typetest/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/typetest.dir/build.make Timed_examples/CMakeFiles/typetest.dir/build
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/typetest.dir/build.make Timed_examples/CMakeFiles/typetest.dir/build
 .PHONY : typetest/fast
 
 # Convenience name for target.
 Timed_examples/CMakeFiles/cat2_visitortest.dir/rule:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/cat2_visitortest.dir/rule
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/cat2_visitortest.dir/rule
 .PHONY : Timed_examples/CMakeFiles/cat2_visitortest.dir/rule
 
 # Convenience name for target.
@@ -182,12 +182,12 @@ cat2_visitortest: Timed_examples/CMakeFiles/cat2_visitortest.dir/rule
 
 # fast build rule for target.
 cat2_visitortest/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/cat2_visitortest.dir/build.make Timed_examples/CMakeFiles/cat2_visitortest.dir/build
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/cat2_visitortest.dir/build.make Timed_examples/CMakeFiles/cat2_visitortest.dir/build
 .PHONY : cat2_visitortest/fast
 
 # Convenience name for target.
 Timed_examples/CMakeFiles/allocatortest.dir/rule:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/allocatortest.dir/rule
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/allocatortest.dir/rule
 .PHONY : Timed_examples/CMakeFiles/allocatortest.dir/rule
 
 # Convenience name for target.
@@ -197,12 +197,12 @@ allocatortest: Timed_examples/CMakeFiles/allocatortest.dir/rule
 
 # fast build rule for target.
 allocatortest/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/allocatortest.dir/build.make Timed_examples/CMakeFiles/allocatortest.dir/build
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/allocatortest.dir/build.make Timed_examples/CMakeFiles/allocatortest.dir/build
 .PHONY : allocatortest/fast
 
 # Convenience name for target.
 Timed_examples/CMakeFiles/CLlegtest.dir/rule:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/CLlegtest.dir/rule
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Timed_examples/CMakeFiles/CLlegtest.dir/rule
 .PHONY : Timed_examples/CMakeFiles/CLlegtest.dir/rule
 
 # Convenience name for target.
@@ -212,7 +212,7 @@ CLlegtest: Timed_examples/CMakeFiles/CLlegtest.dir/rule
 
 # fast build rule for target.
 CLlegtest/fast:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/CLlegtest.dir/build.make Timed_examples/CMakeFiles/CLlegtest.dir/build
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/CLlegtest.dir/build.make Timed_examples/CMakeFiles/CLlegtest.dir/build
 .PHONY : CLlegtest/fast
 
 CLlegtest.o: CLlegtest.cpp.o
@@ -221,7 +221,7 @@ CLlegtest.o: CLlegtest.cpp.o
 
 # target to build an object file
 CLlegtest.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/CLlegtest.dir/build.make Timed_examples/CMakeFiles/CLlegtest.dir/CLlegtest.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/CLlegtest.dir/build.make Timed_examples/CMakeFiles/CLlegtest.dir/CLlegtest.cpp.o
 .PHONY : CLlegtest.cpp.o
 
 CLlegtest.i: CLlegtest.cpp.i
@@ -230,7 +230,7 @@ CLlegtest.i: CLlegtest.cpp.i
 
 # target to preprocess a source file
 CLlegtest.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/CLlegtest.dir/build.make Timed_examples/CMakeFiles/CLlegtest.dir/CLlegtest.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/CLlegtest.dir/build.make Timed_examples/CMakeFiles/CLlegtest.dir/CLlegtest.cpp.i
 .PHONY : CLlegtest.cpp.i
 
 CLlegtest.s: CLlegtest.cpp.s
@@ -239,7 +239,7 @@ CLlegtest.s: CLlegtest.cpp.s
 
 # target to generate assembly for a file
 CLlegtest.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/CLlegtest.dir/build.make Timed_examples/CMakeFiles/CLlegtest.dir/CLlegtest.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/CLlegtest.dir/build.make Timed_examples/CMakeFiles/CLlegtest.dir/CLlegtest.cpp.s
 .PHONY : CLlegtest.cpp.s
 
 allocatortest.o: allocatortest.cpp.o
@@ -248,7 +248,7 @@ allocatortest.o: allocatortest.cpp.o
 
 # target to build an object file
 allocatortest.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/allocatortest.dir/build.make Timed_examples/CMakeFiles/allocatortest.dir/allocatortest.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/allocatortest.dir/build.make Timed_examples/CMakeFiles/allocatortest.dir/allocatortest.cpp.o
 .PHONY : allocatortest.cpp.o
 
 allocatortest.i: allocatortest.cpp.i
@@ -257,7 +257,7 @@ allocatortest.i: allocatortest.cpp.i
 
 # target to preprocess a source file
 allocatortest.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/allocatortest.dir/build.make Timed_examples/CMakeFiles/allocatortest.dir/allocatortest.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/allocatortest.dir/build.make Timed_examples/CMakeFiles/allocatortest.dir/allocatortest.cpp.i
 .PHONY : allocatortest.cpp.i
 
 allocatortest.s: allocatortest.cpp.s
@@ -266,7 +266,7 @@ allocatortest.s: allocatortest.cpp.s
 
 # target to generate assembly for a file
 allocatortest.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/allocatortest.dir/build.make Timed_examples/CMakeFiles/allocatortest.dir/allocatortest.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/allocatortest.dir/build.make Timed_examples/CMakeFiles/allocatortest.dir/allocatortest.cpp.s
 .PHONY : allocatortest.cpp.s
 
 cat2_visitortest.o: cat2_visitortest.cpp.o
@@ -275,7 +275,7 @@ cat2_visitortest.o: cat2_visitortest.cpp.o
 
 # target to build an object file
 cat2_visitortest.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/cat2_visitortest.dir/build.make Timed_examples/CMakeFiles/cat2_visitortest.dir/cat2_visitortest.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/cat2_visitortest.dir/build.make Timed_examples/CMakeFiles/cat2_visitortest.dir/cat2_visitortest.cpp.o
 .PHONY : cat2_visitortest.cpp.o
 
 cat2_visitortest.i: cat2_visitortest.cpp.i
@@ -284,7 +284,7 @@ cat2_visitortest.i: cat2_visitortest.cpp.i
 
 # target to preprocess a source file
 cat2_visitortest.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/cat2_visitortest.dir/build.make Timed_examples/CMakeFiles/cat2_visitortest.dir/cat2_visitortest.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/cat2_visitortest.dir/build.make Timed_examples/CMakeFiles/cat2_visitortest.dir/cat2_visitortest.cpp.i
 .PHONY : cat2_visitortest.cpp.i
 
 cat2_visitortest.s: cat2_visitortest.cpp.s
@@ -293,7 +293,7 @@ cat2_visitortest.s: cat2_visitortest.cpp.s
 
 # target to generate assembly for a file
 cat2_visitortest.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/cat2_visitortest.dir/build.make Timed_examples/CMakeFiles/cat2_visitortest.dir/cat2_visitortest.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/cat2_visitortest.dir/build.make Timed_examples/CMakeFiles/cat2_visitortest.dir/cat2_visitortest.cpp.s
 .PHONY : cat2_visitortest.cpp.s
 
 gentest.o: gentest.cpp.o
@@ -302,7 +302,7 @@ gentest.o: gentest.cpp.o
 
 # target to build an object file
 gentest.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/gentest.dir/build.make Timed_examples/CMakeFiles/gentest.dir/gentest.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/gentest.dir/build.make Timed_examples/CMakeFiles/gentest.dir/gentest.cpp.o
 .PHONY : gentest.cpp.o
 
 gentest.i: gentest.cpp.i
@@ -311,7 +311,7 @@ gentest.i: gentest.cpp.i
 
 # target to preprocess a source file
 gentest.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/gentest.dir/build.make Timed_examples/CMakeFiles/gentest.dir/gentest.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/gentest.dir/build.make Timed_examples/CMakeFiles/gentest.dir/gentest.cpp.i
 .PHONY : gentest.cpp.i
 
 gentest.s: gentest.cpp.s
@@ -320,7 +320,7 @@ gentest.s: gentest.cpp.s
 
 # target to generate assembly for a file
 gentest.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/gentest.dir/build.make Timed_examples/CMakeFiles/gentest.dir/gentest.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/gentest.dir/build.make Timed_examples/CMakeFiles/gentest.dir/gentest.cpp.s
 .PHONY : gentest.cpp.s
 
 grouptest.o: grouptest.cpp.o
@@ -329,7 +329,7 @@ grouptest.o: grouptest.cpp.o
 
 # target to build an object file
 grouptest.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/grouptest.dir/build.make Timed_examples/CMakeFiles/grouptest.dir/grouptest.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/grouptest.dir/build.make Timed_examples/CMakeFiles/grouptest.dir/grouptest.cpp.o
 .PHONY : grouptest.cpp.o
 
 grouptest.i: grouptest.cpp.i
@@ -338,7 +338,7 @@ grouptest.i: grouptest.cpp.i
 
 # target to preprocess a source file
 grouptest.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/grouptest.dir/build.make Timed_examples/CMakeFiles/grouptest.dir/grouptest.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/grouptest.dir/build.make Timed_examples/CMakeFiles/grouptest.dir/grouptest.cpp.i
 .PHONY : grouptest.cpp.i
 
 grouptest.s: grouptest.cpp.s
@@ -347,7 +347,7 @@ grouptest.s: grouptest.cpp.s
 
 # target to generate assembly for a file
 grouptest.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/grouptest.dir/build.make Timed_examples/CMakeFiles/grouptest.dir/grouptest.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/grouptest.dir/build.make Timed_examples/CMakeFiles/grouptest.dir/grouptest.cpp.s
 .PHONY : grouptest.cpp.s
 
 mempooltest.o: mempooltest.cpp.o
@@ -356,7 +356,7 @@ mempooltest.o: mempooltest.cpp.o
 
 # target to build an object file
 mempooltest.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/mempooltest.dir/build.make Timed_examples/CMakeFiles/mempooltest.dir/mempooltest.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/mempooltest.dir/build.make Timed_examples/CMakeFiles/mempooltest.dir/mempooltest.cpp.o
 .PHONY : mempooltest.cpp.o
 
 mempooltest.i: mempooltest.cpp.i
@@ -365,7 +365,7 @@ mempooltest.i: mempooltest.cpp.i
 
 # target to preprocess a source file
 mempooltest.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/mempooltest.dir/build.make Timed_examples/CMakeFiles/mempooltest.dir/mempooltest.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/mempooltest.dir/build.make Timed_examples/CMakeFiles/mempooltest.dir/mempooltest.cpp.i
 .PHONY : mempooltest.cpp.i
 
 mempooltest.s: mempooltest.cpp.s
@@ -374,7 +374,7 @@ mempooltest.s: mempooltest.cpp.s
 
 # target to generate assembly for a file
 mempooltest.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/mempooltest.dir/build.make Timed_examples/CMakeFiles/mempooltest.dir/mempooltest.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/mempooltest.dir/build.make Timed_examples/CMakeFiles/mempooltest.dir/mempooltest.cpp.s
 .PHONY : mempooltest.cpp.s
 
 typetest.o: typetest.cpp.o
@@ -383,7 +383,7 @@ typetest.o: typetest.cpp.o
 
 # target to build an object file
 typetest.cpp.o:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/typetest.dir/build.make Timed_examples/CMakeFiles/typetest.dir/typetest.cpp.o
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/typetest.dir/build.make Timed_examples/CMakeFiles/typetest.dir/typetest.cpp.o
 .PHONY : typetest.cpp.o
 
 typetest.i: typetest.cpp.i
@@ -392,7 +392,7 @@ typetest.i: typetest.cpp.i
 
 # target to preprocess a source file
 typetest.cpp.i:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/typetest.dir/build.make Timed_examples/CMakeFiles/typetest.dir/typetest.cpp.i
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/typetest.dir/build.make Timed_examples/CMakeFiles/typetest.dir/typetest.cpp.i
 .PHONY : typetest.cpp.i
 
 typetest.s: typetest.cpp.s
@@ -401,7 +401,7 @@ typetest.s: typetest.cpp.s
 
 # target to generate assembly for a file
 typetest.cpp.s:
-	cd /home/charles/git/Implied_Price_Engine && $(MAKE) -f Timed_examples/CMakeFiles/typetest.dir/build.make Timed_examples/CMakeFiles/typetest.dir/typetest.cpp.s
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Timed_examples/CMakeFiles/typetest.dir/build.make Timed_examples/CMakeFiles/typetest.dir/typetest.cpp.s
 .PHONY : typetest.cpp.s
 
 # Help Target
@@ -451,6 +451,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/charles/git/Implied_Price_Engine && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

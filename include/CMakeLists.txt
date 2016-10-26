@@ -5,6 +5,7 @@ add_library(IElib STATIC    Trace
                             report
                             benchmark
                             threadpool
+                            LW_threadpool
                             Client
                             Visitor
                             DataElement

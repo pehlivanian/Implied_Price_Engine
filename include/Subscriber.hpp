@@ -10,7 +10,7 @@ public:
   class PublishEvent
   {
   public:
-    PublishEvent(T t) : payload_(t) {}
+      PublishEvent(T t) : payload_(t) {}
     virtual ~PublishEvent() = default;
     PublishEvent(const PublishEvent& P) : payload_(P.payload_) {}
     PublishEvent operator-() const { return PublishEvent(-payload_); }

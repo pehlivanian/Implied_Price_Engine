@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(CMAKE_COMMAND) -E cmake_progress_start /home/charles/ClionProjects/Implied_Price_Engine_All/CMakeFiles /home/charles/ClionProjects/Implied_Price_Engine_All/Quote_Server/CMakeFiles/progress.marks
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Quote_Server/all
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(CMAKE_COMMAND) -E cmake_progress_start /home/charles/ClionProjects/Implied_Price_Engine_All/CMakeFiles /home/charles/ClionProjects/Implied_Price_Engine_All/LTTNG-traces/CMakeFiles/progress.marks
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 LTTNG-traces/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/charles/ClionProjects/Implied_Price_Engine_All/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Quote_Server/clean
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 LTTNG-traces/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,12 +97,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Quote_Server/preinstall
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 LTTNG-traces/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Quote_Server/preinstall
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 LTTNG-traces/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -111,88 +111,88 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-Quote_Server/CMakeFiles/QuoteClient.dir/rule:
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Quote_Server/CMakeFiles/QuoteClient.dir/rule
-.PHONY : Quote_Server/CMakeFiles/QuoteClient.dir/rule
+LTTNG-traces/CMakeFiles/IE_test.dir/rule:
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 LTTNG-traces/CMakeFiles/IE_test.dir/rule
+.PHONY : LTTNG-traces/CMakeFiles/IE_test.dir/rule
 
 # Convenience name for target.
-QuoteClient: Quote_Server/CMakeFiles/QuoteClient.dir/rule
+IE_test: LTTNG-traces/CMakeFiles/IE_test.dir/rule
 
-.PHONY : QuoteClient
+.PHONY : IE_test
 
 # fast build rule for target.
-QuoteClient/fast:
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Quote_Server/CMakeFiles/QuoteClient.dir/build.make Quote_Server/CMakeFiles/QuoteClient.dir/build
-.PHONY : QuoteClient/fast
+IE_test/fast:
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f LTTNG-traces/CMakeFiles/IE_test.dir/build.make LTTNG-traces/CMakeFiles/IE_test.dir/build
+.PHONY : IE_test/fast
 
 # Convenience name for target.
-Quote_Server/CMakeFiles/QuoteServer.dir/rule:
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 Quote_Server/CMakeFiles/QuoteServer.dir/rule
-.PHONY : Quote_Server/CMakeFiles/QuoteServer.dir/rule
+LTTNG-traces/CMakeFiles/IE-lttng.dir/rule:
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f CMakeFiles/Makefile2 LTTNG-traces/CMakeFiles/IE-lttng.dir/rule
+.PHONY : LTTNG-traces/CMakeFiles/IE-lttng.dir/rule
 
 # Convenience name for target.
-QuoteServer: Quote_Server/CMakeFiles/QuoteServer.dir/rule
+IE-lttng: LTTNG-traces/CMakeFiles/IE-lttng.dir/rule
 
-.PHONY : QuoteServer
+.PHONY : IE-lttng
 
 # fast build rule for target.
-QuoteServer/fast:
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Quote_Server/CMakeFiles/QuoteServer.dir/build.make Quote_Server/CMakeFiles/QuoteServer.dir/build
-.PHONY : QuoteServer/fast
+IE-lttng/fast:
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f LTTNG-traces/CMakeFiles/IE-lttng.dir/build.make LTTNG-traces/CMakeFiles/IE-lttng.dir/build
+.PHONY : IE-lttng/fast
 
-QuoteClient.o: QuoteClient.cpp.o
+IE-lttng.o: IE-lttng.cpp.o
 
-.PHONY : QuoteClient.o
-
-# target to build an object file
-QuoteClient.cpp.o:
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Quote_Server/CMakeFiles/QuoteClient.dir/build.make Quote_Server/CMakeFiles/QuoteClient.dir/QuoteClient.cpp.o
-.PHONY : QuoteClient.cpp.o
-
-QuoteClient.i: QuoteClient.cpp.i
-
-.PHONY : QuoteClient.i
-
-# target to preprocess a source file
-QuoteClient.cpp.i:
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Quote_Server/CMakeFiles/QuoteClient.dir/build.make Quote_Server/CMakeFiles/QuoteClient.dir/QuoteClient.cpp.i
-.PHONY : QuoteClient.cpp.i
-
-QuoteClient.s: QuoteClient.cpp.s
-
-.PHONY : QuoteClient.s
-
-# target to generate assembly for a file
-QuoteClient.cpp.s:
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Quote_Server/CMakeFiles/QuoteClient.dir/build.make Quote_Server/CMakeFiles/QuoteClient.dir/QuoteClient.cpp.s
-.PHONY : QuoteClient.cpp.s
-
-QuoteServer.o: QuoteServer.cpp.o
-
-.PHONY : QuoteServer.o
+.PHONY : IE-lttng.o
 
 # target to build an object file
-QuoteServer.cpp.o:
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Quote_Server/CMakeFiles/QuoteServer.dir/build.make Quote_Server/CMakeFiles/QuoteServer.dir/QuoteServer.cpp.o
-.PHONY : QuoteServer.cpp.o
+IE-lttng.cpp.o:
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f LTTNG-traces/CMakeFiles/IE-lttng.dir/build.make LTTNG-traces/CMakeFiles/IE-lttng.dir/IE-lttng.cpp.o
+.PHONY : IE-lttng.cpp.o
 
-QuoteServer.i: QuoteServer.cpp.i
+IE-lttng.i: IE-lttng.cpp.i
 
-.PHONY : QuoteServer.i
+.PHONY : IE-lttng.i
 
 # target to preprocess a source file
-QuoteServer.cpp.i:
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Quote_Server/CMakeFiles/QuoteServer.dir/build.make Quote_Server/CMakeFiles/QuoteServer.dir/QuoteServer.cpp.i
-.PHONY : QuoteServer.cpp.i
+IE-lttng.cpp.i:
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f LTTNG-traces/CMakeFiles/IE-lttng.dir/build.make LTTNG-traces/CMakeFiles/IE-lttng.dir/IE-lttng.cpp.i
+.PHONY : IE-lttng.cpp.i
 
-QuoteServer.s: QuoteServer.cpp.s
+IE-lttng.s: IE-lttng.cpp.s
 
-.PHONY : QuoteServer.s
+.PHONY : IE-lttng.s
 
 # target to generate assembly for a file
-QuoteServer.cpp.s:
-	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f Quote_Server/CMakeFiles/QuoteServer.dir/build.make Quote_Server/CMakeFiles/QuoteServer.dir/QuoteServer.cpp.s
-.PHONY : QuoteServer.cpp.s
+IE-lttng.cpp.s:
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f LTTNG-traces/CMakeFiles/IE-lttng.dir/build.make LTTNG-traces/CMakeFiles/IE-lttng.dir/IE-lttng.cpp.s
+.PHONY : IE-lttng.cpp.s
+
+IE_test.o: IE_test.cpp.o
+
+.PHONY : IE_test.o
+
+# target to build an object file
+IE_test.cpp.o:
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f LTTNG-traces/CMakeFiles/IE_test.dir/build.make LTTNG-traces/CMakeFiles/IE_test.dir/IE_test.cpp.o
+.PHONY : IE_test.cpp.o
+
+IE_test.i: IE_test.cpp.i
+
+.PHONY : IE_test.i
+
+# target to preprocess a source file
+IE_test.cpp.i:
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f LTTNG-traces/CMakeFiles/IE_test.dir/build.make LTTNG-traces/CMakeFiles/IE_test.dir/IE_test.cpp.i
+.PHONY : IE_test.cpp.i
+
+IE_test.s: IE_test.cpp.s
+
+.PHONY : IE_test.s
+
+# target to generate assembly for a file
+IE_test.cpp.s:
+	cd /home/charles/ClionProjects/Implied_Price_Engine_All && $(MAKE) -f LTTNG-traces/CMakeFiles/IE_test.dir/build.make LTTNG-traces/CMakeFiles/IE_test.dir/IE_test.cpp.s
+.PHONY : IE_test.cpp.s
 
 # Help Target
 help:
@@ -201,15 +201,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... IE_test"
 	@echo "... edit_cache"
-	@echo "... QuoteClient"
-	@echo "... QuoteServer"
-	@echo "... QuoteClient.o"
-	@echo "... QuoteClient.i"
-	@echo "... QuoteClient.s"
-	@echo "... QuoteServer.o"
-	@echo "... QuoteServer.i"
-	@echo "... QuoteServer.s"
+	@echo "... IE-lttng"
+	@echo "... IE-lttng.o"
+	@echo "... IE-lttng.i"
+	@echo "... IE-lttng.s"
+	@echo "... IE_test.o"
+	@echo "... IE_test.i"
+	@echo "... IE_test.s"
 .PHONY : help
 
 

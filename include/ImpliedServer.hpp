@@ -21,7 +21,6 @@
 #include "ImpliedEngine.hpp"
 #include "Client.hpp"
 #include "SecPair.hpp"
-#include "threadpool.hpp"
 #include "impl.hpp"
 
 #define QUOTE(A, B) QuotePublishEvent(std::make_pair((A), (B)))
@@ -35,8 +34,8 @@ template<int N>
 class ImpliedServer
 {
 public:
-    ImpliedServer(bool process_feed=true) :
-            p_(std::make_unique<impl<ImpliedServer<N>>>(process_feed)) { init_(); }
+    ImpliedServer(bool sim_mode=true) :
+            p_(std::make_unique<impl<ImpliedServer<N>>>(sim_mode)) { init_(); }
     void process() { preload_tasks_(); profiled_process_tasks_(); };
 
     // Here come the delegators
@@ -71,7 +70,7 @@ private:
 
     void init_();
     std::unique_ptr<impl<ImpliedServer>> p_;
-    std::vector<std::function<int()>> tasks_;   // Task queue used to preload for timing experiments
+    std::vector<std::function<void()>> tasks_;   // Task queue used to preload for timing experiments
 };
 
 #undef QUOTE

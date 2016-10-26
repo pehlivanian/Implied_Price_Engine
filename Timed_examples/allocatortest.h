@@ -13,6 +13,7 @@
 #include <random>
 // #include <python2.7/Python.h>
 
+#include "IE_types.hpp"
 #include "report.hpp"
 #include "problem.hpp"
 #include "Graph.hpp"

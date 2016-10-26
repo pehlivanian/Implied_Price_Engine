@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <algorithm>
+#include <functional>
 #include <limits>
 
 #include "Visitor.hpp"

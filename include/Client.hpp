@@ -32,43 +32,6 @@ struct quote_msg
     QuotePublishEvent e;
 };
 
-#if 0
-struct quote_msg
-{
-  quote_msg(std::string input) : input_(input)
-  {
-      // XXX
-    // init_();
-  }
-  quote_msg(char* input) : input_(input)
-  {
-    init_();
-  }
-
-  std::string input_;
-private:
-  void init_()
-  {
-#if 0
-    // Comma-delimited
-    string tok;
-    stringstream ss(input_);
-    while(getline(ss, tok))
-      {
-	regex pat(R"([^,]+)");
-	for(sregex_iterator p(tok.begin(), tok.end(),pat);
-	    p!=sregex_iterator{};
-	    ++p)
-	  {
-	    std::cout << (*p)[0] << " ";
-	  }
-	std::cout << "\n";
-      }
-#endif
-  }
-  
-};
-#endif
 
 class ClientComponent
 {

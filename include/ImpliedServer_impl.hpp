@@ -7,16 +7,15 @@ class ImpliedServer;
 template<int N>
 struct impl<ImpliedServer<N>>
 {
-    impl(bool process_feed) :
-            process_feed_(process_feed),
+    impl(bool sim_mode) :
+            sim_mode_(sim_mode),
             IE_(std::make_unique<ImpliedEngine<N>>()),
-            C_(std::make_unique<Client>(8008, (char*)"0.0.0.0")),
-            pool_(std::make_unique<threadpool>()) {}
+            C_(std::make_unique<Client>(8008, (char*)"0.0.0.0"))
+           {}
 
-    bool process_feed_;
+    bool sim_mode_;
     std::unique_ptr<ImpliedEngine<N>> IE_;
     std::unique_ptr<Client> C_;
-    std::unique_ptr<threadpool> pool_;
 
 };
 
@@ -24,7 +23,7 @@ template<int N>
 void
 ImpliedServer<N>::init_()
 {
-    if (p_->process_feed_)
+    if (p_->sim_mode_)
         (p_->C_)->fetch();
 }
 
@@ -32,9 +31,10 @@ template<int N>
 void
 ImpliedServer<N>::profiled_process_tasks_()
 {
-    const int R = 25;
+    const int R = 5;
     const int C = tasks_.size();
 
+#if 0
     std::string WORK_DIR = "~/ClionProjects/Implied_Price_Engine_All/data/";
 
     std::ofstream fsu("./data/user_quote.dat");
@@ -49,6 +49,7 @@ ImpliedServer<N>::profiled_process_tasks_()
     }
     fsu << "\n";
     fsi << "\n";
+#endif
 
     long* Micro_times[R];
 
@@ -63,11 +64,10 @@ ImpliedServer<N>::profiled_process_tasks_()
             for(int c=0; c<C; ++c)
             {
                 gettimeofday(&beforeV, 0);
-                // int res = (p_->pool_)->submit(tasks_[c]).get();
-                int res = tasks_[c]();
+                tasks_[c]();
                 gettimeofday(&afterV, 0);
-                // std::cout << beforeV.tv_usec << " : " << afterV.tv_usec << "\n";
                 Micro_times[r][c] = diffTimer(&beforeV, &afterV);
+#if 0
                 if ((r == 0) && (c > 99) && ((c%10) == 0))
                 {
 
@@ -75,11 +75,13 @@ ImpliedServer<N>::profiled_process_tasks_()
                     (p_->IE_)->write_implied_quote(c, fsi);
 
                 }
-
+#endif
             }
 
+#if 0
     fsu.close();
     fsi.close();
+#endif
 
     printf("Table (micros) for Implied Quote Update Step\n");
     printf ("n\taverage\t\tmin\tmax\tstdev\t\t#\n");
@@ -92,7 +94,8 @@ void
 ImpliedServer<N>::process_tasks_()
 {
     for(auto& task : tasks_)
-        int r = (p_->pool_)->submit(task).get();
+        int r = task();
+
 }
 
 template<int N>
@@ -146,7 +149,7 @@ ImpliedServer<N>::preload_tasks_()
                 sz = static_cast<size_t>(document["size"].GetInt());
             }
             // Multi-threaded version call
-            std::function<int()> fn = [this,sp,pc,sz]() mutable { (p_->IE_)->publish_bid(sp, QUOTE(pc,sz)); return 0; };
+            std::function<void()> fn = [this,sp,pc,sz]() mutable { (p_->IE_)->publish_bid(sp, QUOTE(pc,sz)); };
             tasks_.push_back(fn);
         }
         else if (document.HasMember("ask"))
@@ -170,7 +173,7 @@ ImpliedServer<N>::preload_tasks_()
             }
 
             // Multi-threaded version call
-            std::function<int()> fn = [this,sp,pc,sz]() mutable { (p_->IE_)->publish_ask(sp, QUOTE(pc,sz)); return 0; };
+            std::function<void()> fn = [this,sp,pc,sz]() mutable { (p_->IE_)->publish_ask(sp, QUOTE(pc,sz)); };
             tasks_.push_back(fn);
         }
     }

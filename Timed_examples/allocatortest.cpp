@@ -1,8 +1,6 @@
 #include "allocatortest.h"
 
-template <class T, std::size_t N> using A = stack_allocator<T, N>;
-template <class T, std::size_t N> using ForwardList = std::forward_list<T, A<T,N>>;
-
+using namespace IE_types;
 
 int main(int argc, char **argv)
 {

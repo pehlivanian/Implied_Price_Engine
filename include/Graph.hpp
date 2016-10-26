@@ -40,7 +40,7 @@ using SERIALIZER_R = boost::shared_lock<boost::shared_mutex>;
 class Graph : public DataElement
 {
 public:
-  using Graph_iterator = VertexList::iterator;
+  using Graph_iterator = VertexList::const_iterator;
   Graph() : n_(0), directed_(true) 
   {
     arena<POOL_SIZE>* ar = new arena<POOL_SIZE>{};
@@ -61,7 +61,10 @@ public:
   Graph(Graph&&) noexcept;
   Graph& operator=(Graph&&) noexcept;
 
-  inline void accept(Visitor* v) override { SERIALIZE_READS; v->visit(this); };
+  inline void accept(Visitor* v) override {
+    // SERIALIZE_READS;
+    v->visit(this);
+  };
 
   inline const size_t numVertices() const { return n_; }
   inline bool directed() const { return directed_; }
@@ -77,6 +80,8 @@ public:
 
   VertexIterator begin(int u) { return vertices_[u].begin(); }
   VertexIterator end(int u) { return vertices_[u].end(); }
+    CVertexIterator cbegin(int u) { return vertices_[u].cbegin(); }
+    CVertexIterator cend(int u) { return vertices_[u].cend(); }
 
   void load(std::string filename);			 
 

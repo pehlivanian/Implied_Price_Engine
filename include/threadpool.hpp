@@ -20,7 +20,7 @@ class function_wrapper
  public:
    template<typename F>
      function_wrapper(F&& f) :
-     impl(new impl_type<F>(std::move(f))) {}
+     impl(new impl_type<F>(std::forward<F>(f))) {}
 
    void operator()() { impl->call(); }
    
@@ -66,7 +66,7 @@ class function_wrapper
      struct impl_type : impl_base
      {
 	F f;
-	impl_type(F&& f_) : f(std::move(f_)) {}
+	impl_type(F&& f_) : f(std::forward<F>(f_)) {}
 	void call() { f(); }
      };   
 

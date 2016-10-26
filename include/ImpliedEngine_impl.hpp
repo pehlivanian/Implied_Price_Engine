@@ -63,7 +63,7 @@ template<int N>
 Price_Size_Pair
 ImpliedEngine<N>::merge_quote_bid_(int leg)
 {
-    SERIALIZE_READS;
+    // SERIALIZE_READS;
     Price_Size_Pair uq = (p_->uQuote_)[0][leg];
     Price_Size_Pair iq = (p_->iQuote_)[0][leg];
     if (uq.first == iq.first)
@@ -78,7 +78,7 @@ template<int N>
 Price_Size_Pair
 ImpliedEngine<N>::merge_quote_ask_(int leg)
 {
-    SERIALIZE_READS;
+    // SERIALIZE_READS;
     Price_Size_Pair uq = (p_->uQuote_)[1][leg];
     Price_Size_Pair iq = (p_->iQuote_)[1][leg];
     if (uq.first == iq.first)
