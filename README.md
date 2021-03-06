@@ -1,6 +1,6 @@
 # Implied_Price_Engine
 
-Complete Implied Price Server for CME, ICE energy markets. 
+Complete Implied Price Server for CME, ICE energy markets. *Header Only, Implementation by request"
 
 The algorithm is new represents significant efficiency enhancements over
 the standard algorithms. Prices are read in-process by socket server
